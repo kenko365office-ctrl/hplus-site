@@ -606,6 +606,48 @@
         width: auto;
       }
     }
+/* ===== Mobile polish (iPhone SE含む) ===== */
+@media (max-width: 480px) {
+
+  /* 1) 固定をやめて、自然にスクロールさせる */
+  header, .header, .nav, .topbar {
+    position: static !important;
+  }
+
+  /* 2) ヒーローを「縦並び」にして読みやすく */
+  .hero, .hero-inner, .hero-content {
+    display: block !important;
+  }
+
+  /* 3) 1画面目の文字をスマホ用に整える */
+  .hero h1, .hero-title {
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0.02em !important;
+    word-break: keep-all;
+  }
+  .hero p, .hero-lead, .hero-subtitle {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    margin-top: 10px !important;
+  }
+
+  /* 4) ボタンを押しやすく（指でタップしやすいサイズ） */
+  .hero .btn, .hero a.btn, .hero .cta, .hero a.cta {
+    display: inline-block !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+    border-radius: 999px !important;
+  }
+
+  /* 5) ヒーローの余白（詰まりすぎ防止） */
+  .hero {
+    padding: 22px 16px !important;
+    min-height: auto !important;
+  }
+}
   </style>
 </head>
 <body>
