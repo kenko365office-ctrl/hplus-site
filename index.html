@@ -1,17 +1,915 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>外部保健室 H+ | 30人の壁を超える仕組み</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-BITP5MiE.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DGOXkV-p.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>仕組みがあれば、守れる健康がある。｜中小企業のシェア型保健室 H＋</title>
+  <meta name="description" content="10〜30名規模の中小企業向け「シェア型保健室」サービス。健診からはじめる健康づくりの仕組みづくりで、従業員を大切にする会社づくりをサポートします。" />
+
+  <!-- フォント（Noto Sans JP系） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #0D6EFD;       /* ビビッドな青 */
+      --primary-dark: #084298;
+      --primary-light: #E7F1FF;
+      --accent: #22A4FF;
+      --text-main: #222222;
+      --text-muted: #666666;
+      --bg: #FFFFFF;
+      --bg-soft: #F5F7FB;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow-soft: 0 10px 25px rgba(0,0,0,0.06);
+      --max-width: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    img {
+      max-width: 100%;
+      vertical-align: middle;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--primary-dark);
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(13,110,253,0.3);
+    }
+
+    .logo-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #0D6EFD, #1D8CFF);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(13,110,253,0.45);
+      transition:
+        background 0.15s ease,
+        transform 0.1s ease,
+        box-shadow 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #084298, #0D6EFD);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(13,110,253,0.5);
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      background: #fff;
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 13px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(13,110,253,0.12);
+      transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.1s ease;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      transform: translateY(-1px);
+      text-decoration: none;
+      box-shadow: 0 6px 14px rgba(13,110,253,0.18);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #FFFFFF 0%, #E7F1FF 45%, #F5F7FB 100%);
+      padding: 32px 0 40px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(13,110,253,0.08);
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: 28px;
+      line-height: 1.5;
+      margin: 8px 0 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #111827;
+    }
+
+    .hero-lead {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .hero-image {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      min-height: 260px;
+      box-shadow: var(--shadow-soft);
+      background:
+        linear-gradient(135deg, rgba(13,110,253,0.12), rgba(13,110,253,0.02)),
+        url("assets/hero.jpg") center/cover no-repeat;
+      background-color: #e5e7eb;
+    }
+
+    .hero-tagline {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(4px);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+    }
+
+    .hero-tagline strong {
+      color: var(--primary-dark);
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    section:nth-of-type(odd) {
+      background: var(--bg);
+    }
+
+    section:nth-of-type(even) {
+      background: var(--bg-soft);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .section-lead {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 26px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 18px 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid #E5E7EB;
+      font-size: 14px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 12px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    /* ストーリー（原体験） */
+    .story-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr);
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .story-text p {
+      margin: 0 0 14px;
+      font-size: 15px;
+      color: var(--text-main);
+    }
+
+    .story-side {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 18px 16px;
+      border: 1px solid #E5E7EB;
+      box-shadow: var(--shadow-soft);
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .story-side h3 {
+      font-size: 15px;
+      margin: 0 0 8px;
+      color: var(--primary-dark);
+    }
+
+    .story-side ul {
+      padding-left: 20px;
+      margin: 6px 0 8px;
+    }
+
+    .story-side li {
+      margin-bottom: 4px;
+    }
+
+    .highlight-box {
+      margin-top: 12px;
+      border-left: 4px solid #0D6EFD;
+      padding-left: 12px;
+      font-size: 14px;
+      color: #084298;
+      font-weight: 500;
+    }
+
+    /* メリット・リスク（守りがあるから攻め続けられる） */
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .list-check {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-main);
+    }
+
+    .list-check li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+    }
+
+    .list-check li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+      font-size: 11px;
+    }
+
+    .risk-box {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 14px 14px;
+      border: 1px solid #F97373;
+      box-shadow: var(--shadow-soft);
+      font-size: 14px;
+      color: #B91C1C;
+      line-height: 1.9;
+    }
+
+    .risk-box strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    /* 対応エリア */
+    .area-box {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 18px 16px;
+      border: 1px solid #E5E7EB;
+      box-shadow: var(--shadow-soft);
+      font-size: 14px;
+    }
+
+    .area-box strong {
+      color: var(--primary-dark);
+    }
+
+    /* 流れ */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .step {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 16px 14px;
+      border: 1px solid #E5E7EB;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .step-number {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--text-muted);
+    }
+
+    /* CTA・フッター */
+    .cta-inner {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-inner p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    footer {
+      padding: 24px 0 32px;
+      background: #0B1120;
+      color: #9CA3AF;
+      font-size: 11px;
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .footer-inner a {
+      color: #E5E7EB;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 840px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-image {
+        order: -1;
+      }
+      .card-grid,
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .story-layout,
+      .two-column {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* スマホ向けの最終調整 */
+    @media (max-width: 600px) {
+      body {
+        font-size: 14px;
+        line-height: 1.9;
+      }
+
+      section {
+        padding: 28px 0;
+      }
+
+      .section-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      .section-lead {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .hero {
+        padding-top: 24px;
+        padding-bottom: 32px;
+      }
+
+      .hero-inner {
+        gap: 20px;
+      }
+
+      .hero-title {
+        font-size: 22px;
+        line-height: 1.5;
+      }
+
+      .hero-lead {
+        font-size: 14px;
+      }
+
+      .card {
+        padding: 14px 12px;
+        font-size: 13px;
+      }
+
+      .story-layout {
+        gap: 20px;
+      }
+
+      .story-side {
+        font-size: 13px;
+        padding: 16px 14px;
+      }
+
+      .risk-box {
+        font-size: 14px;
+        line-height: 1.9;
+        padding: 14px 12px;
+      }
+
+      .steps .step {
+        padding: 14px 12px;
+      }
+
+      .cta-inner {
+        padding: 0 4px;
+      }
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-cta .btn-primary,
+      .hero-cta .btn-outline {
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+
+  <!-- ヘッダー -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-mark">H+</div>
+        <div>
+          <div>シェア型保健室 H＋</div>
+          <div class="logo-sub">健診からはじめる、働く人を守る仕組みづくり</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">サービス概要</a></li>
+          <li><a href="#story">なぜこのサービスを？</a></li>
+          <li><a href="#benefit">企業のメリット</a></li>
+          <li><a href="#flow">導入の流れ</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <a href="#contact" class="btn-outline">無料相談</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="badge-row">
+          <span class="badge">神奈川県 HATSU 採択</span>
+          <span class="badge">厚木市 美容室で実証を経て導入中</span>
+        </div>
+        <h1 class="hero-title">仕組みがあれば、<br>守れる健康がある。</h1>
+        <p class="hero-lead">
+          10〜30名規模の中小企業向け「シェア型保健室」サービス。<br>
+          健診の段取りから、結果の活かし方、日々の相談の“受け皿”づくりまで。<br>
+          人事がいなくても、従業員を大切にする会社づくりを一緒に整えます。
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn-primary">まずは無料で話を聞いてみる</a>
+          <a href="#about" class="btn-outline">サービス概要を見る</a>
+        </div>
+        <div class="hero-note">
+          協会けんぽ・健診機関の切り替えや、助成金の活用のご相談も可能です。
+        </div>
+      </div>
+
+      <!-- 写真（ここに assets/hero.jpg を置く） -->
+      <div class="hero-image">
+        <!--
+          ※ メモ：
+          ここに「職場・人の温かさ」が伝わる写真を assets/hero.jpg として配置してください。
+          現在はプレースホルダー背景として hero.jpg を読み込む設定になっています。
+        -->
+        <div class="hero-tagline">
+          <span>中小企業のための</span><strong>シェア型保健室</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- こんなことで悩んでいませんか？ -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">こんなことで悩んでいませんか？</h2>
+      <p class="section-lead">
+        「法律的にやるべきことはやっているはずなのに、健診や健康管理まわりはいつも後回しになってしまう…」<br>
+        そんな声をよく聞きます。
+      </p>
+
+      <div class="card-grid">
+        <div class="card">
+          <span class="tag">健診まわり</span>
+          <h3>健診の案内・回収が毎年バタバタ</h3>
+          <p>
+            受診漏れ・結果の未回収・保管の仕方…<br>
+            なんとなく対応しているけれど、「これで本当に大丈夫？」と毎年不安になる。
+          </p>
+        </div>
+        <div class="card">
+          <span class="tag">人材・定着</span>
+          <h3>忙しくて、従業員の変化に気づけない</h3>
+          <p>
+            忙しいメンバーほど、無理をしがち。<br>
+            体調不良やメンタル不調のサインに、気づいたときにはもう手遅れだったことも。
+          </p>
+        </div>
+        <div class="card">
+          <span class="tag">制度・リスク</span>
+          <h3>成長企業の裏に潜むリスク</h3>
+          <p>
+            事業の成長スピードに比べて“人を守る仕組み”が追いついていないと、<br>
+            小さな体調不良やメンタルのサインを見逃しやすくなります。<br>
+            その積み重ねが、急な休職・離職など「防げたはずの問題」につながることも。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- なぜこのサービスを始めたのか（あなたの原体験ストーリー） -->
+  <section id="story">
+    <div class="container">
+      <h2 class="section-title">なぜ、シェア型保健室という形で支えたいのか</h2>
+      <p class="section-lead">
+        「働くって、本当に大変だな」──自分自身の経験と、保健師として見てきた現場から生まれたサービスです。
+      </p>
+
+      <div class="story-layout">
+
+        <div class="story-text">
+          <p>
+            働きながら子育てをしていた頃、<br>
+            「働くって、本当に大変だ」と毎日のように感じていました。
+          </p>
+          <p>
+            朝起きて子どもを保育園に送り、時間に間に合うように駆け込んで働き、<br>
+            帰ってからは夕飯づくりやお風呂、寝かしつけ。<br>
+            散らかった部屋を横目に、また翌日がやってくる──そんな毎日でした。
+          </p>
+          <p>
+            ギリギリの体力と気力で働く人たちの大変さを、当時の私は身をもって感じていました。
+          </p>
+          <p>
+            そして保健師として、これまで <strong>20,000件以上の健診業務</strong> に携わる中で、<br>
+            健康は“個人の努力だけでは守りきれず”、<br>
+            <strong>働く環境そのものが従業員のコンディションを左右する</strong>ことを痛感してきました。
+          </p>
+          <p>
+            いま、成長企業ほど「人材」が最も大切な資源です。<br>
+            しかし、体調不良・メンタル不調・離職などの問題は、<br>
+            多くの場合「もっと早く気づけていれば防げた」ものばかりです。
+          </p>
+        </div>
+
+        <aside class="story-side">
+          <h3>H＋のシェア型保健室が大切にしていること</h3>
+          <ul>
+            <li>従業員が「大切にされている」と実感できること</li>
+            <li>無理なく続けられる、シンプルな仕組みであること</li>
+            <li>健診や相談が1回きりで終わらず、次の一歩につながること</li>
+            <li>小さな声や変化を、会社全体の改善につなげていくこと</li>
+          </ul>
+
+          <div class="highlight-box">
+            働く人が元気で働けることは、企業にとって最大の“攻め”の力。<br>
+            小さなサインを早く拾える仕組みは、企業を守る“守り”の力。<br>
+            その両方を支えるために、シェア型保健室という形にたどり着きました。
+          </div>
+
+          <p style="margin-top:10px;">
+            まずは、私自身も暮らす神奈川県央エリア（厚木・海老名・伊勢原周辺）から。<br>
+            顔が見える距離で、現場に寄り添いながら伴走していきます。
+          </p>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 企業にとってのメリットとリスク（守りがあるから攻め続けられる） -->
+  <section id="benefit">
+    <div class="container">
+      <h2 class="section-title">「守り」があるから、攻め続けられる。</h2>
+      <p class="section-lead">
+        健診や健康相談は「義務」ではなく、成長し続ける会社の「土台」です。<br>
+        シェア型保健室は、従業員と会社、両方を守る“仕組み”です。
+      </p>
+
+      <div class="two-column">
+        <div>
+          <h3 style="font-size:15px; margin-top:0;">外部保健室を置くことで得られるもの</h3>
+          <ul class="list-check">
+            <li>健診の案内・受診状況・結果の保管まで、毎年のバタバタが標準化される</li>
+            <li>従業員の体調・メンタル不調のサインを、早めにキャッチしやすくなる</li>
+            <li>忙しい管理職が、個別の健康相談まで抱え込まなくてよくなる</li>
+            <li>「会社が自分を大切にしてくれている」という実感が、定着・エンゲージメントにつながる</li>
+            <li>助成金や制度の情報もキャッチアップでき、ムダなコストを抑えながら整えていける</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="risk-box">
+            <strong>問題が“表面化してから”では、遅いこともあります。</strong>
+            <p style="margin:0 0 6px;">
+              働き方の偏りや無理の積み重ねは、休職・離職・メンタル不調、労災などのトラブルにつながることがあります。
+            </p>
+            <p style="margin:0 0 6px;">
+              多くの場合、「もう少し早く気づけていれば…」と後悔が残ります。
+            </p>
+            <p style="margin:0;">
+              だからこそ、“何も起きていない今”から、<br>
+              小さなサインをキャッチできる仕組みを整えておくことが、<br>
+              会社と従業員を守る力になります。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 対応エリア -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">対応エリアについて</h2>
+      <p class="section-lead">
+        まずは、地元から丁寧に。顔が見える距離で、現場に寄り添いながら伴走します。
+      </p>
+      <div class="area-box">
+        <p style="margin:0 0 6px;">
+          <strong>現在の主な対応エリア：</strong><br>
+          神奈川県央エリア（厚木市・海老名市・伊勢原市 周辺）を中心に対応しています。
+        </p>
+        <p style="margin:0;">
+          その他の地域につきましても、オンライン面談やスポット支援など、<br>
+          実施方法を含めて柔軟にご相談をお受けします。まずはお気軽にお問い合わせください。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 導入の流れ -->
+  <section id="flow">
+    <div class="container">
+      <h2 class="section-title">導入の流れ</h2>
+      <p class="section-lead">
+        「いきなり大きな契約」は必要ありません。小さく試しながら、御社に合う形を一緒に整えていきます。
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">Step 1</div>
+          <div class="step-title">無料ヒアリング（オンライン可）</div>
+          <p>
+            御社の従業員数・業種・現在の健診の状況・お困りごとをお伺いします。<br>
+            「何ができるのか知りたい」レベルのご相談でも大丈夫です。
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">Step 2</div>
+          <div class="step-title">現状の整理とご提案</div>
+          <p>
+            健診の流れ・結果の扱い・相談窓口の有無などを整理し、<br>
+            御社の規模やご予算に合わせた「外部保健室」の始め方をご提案します。
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">Step 3</div>
+          <div class="step-title">導入・運用開始（仕組みづくり）</div>
+          <p>まずは無理のない範囲から導入し、従業員への周知・健診フローの整備・面談や相談の運用など、<br>現場の声も拾いながら一緒に形にしていきます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section id="contact">
+    <div class="container">
+      <div class="cta-inner">
+        <h2 class="section-title">まずは、御社の「状況を整理する」ところから。</h2>
+        <p>
+          「何から手をつければいいか分からない」「他社はどうしているの？」といった、<br>
+          まだ検討の初期段階でのご相談も歓迎しています。
+        </p>
+
+        <p style="margin-bottom:10px;">
+          ▶ お問い合わせは、下記のフォームからお気軽にどうぞ。
+        </p>
+
+        <!-- Google フォーム -->
+        <a href="https://forms.gle/1EDDcuong5bMFbGV7"
+           class="btn-primary"
+           target="_blank">
+           問い合わせフォームを開く
+        </a>
+
+        <p style="margin:14px 0 6px; font-size:14px;">
+          または
+        </p>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/eichi_plus_gaibuhokenshitu"
+           class="btn-outline"
+           target="_blank">
+           Instagram（情報発信）
+        </a>
+</div>
+    </div>
+  </section>
+<!-- フッター -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        &copy; シェア型保健室 H＋ / H-plus. All rights reserved.
+      </div>
+      <div>
+        <a href="privacy.html">プライバシーポリシー</a> &nbsp;|&nbsp; <a href="tokusho.html">特定商取引法に基づく表記</a> &nbsp;|&nbsp; <a href="#top">ページ上部へ</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
 </html>
