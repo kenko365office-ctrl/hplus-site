@@ -648,7 +648,47 @@
     min-height: auto !important;
   }
 }
-  </style>
+ /* ===== Fix header + width on mobile ===== */
+@media (max-width: 480px) {
+
+  /* 画面横幅をはみ出さない */
+  html, body { overflow-x: hidden; }
+
+  /* container が狭い/固定幅なら 100% にする */
+  .container{
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* ヘッダーを縦並びに */
+  header .container.header-inner{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  /* スマホでは上部ナビは消す（縦書きっぽくなる原因を根こそぎ回避） */
+  header nav,
+  header .nav,
+  header .nav-links,
+  header .menu{
+    display: none !important;
+  }
+
+  /* 無料相談ボタンをスマホで押しやすく */
+  header .btn,
+  header a.btn,
+  header .cta,
+  header a.cta{
+    width: 100% !important;
+    max-width: 360px !important;
+    text-align: center !important;
+  }
+}
+ </style>
 </head>
 <body>
   <div id="top"></div>
