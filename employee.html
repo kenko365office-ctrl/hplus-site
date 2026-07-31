@@ -354,16 +354,33 @@ h3 {
   min-height: 58px;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   padding: 15px 36px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
   border-radius: 999px;
-  background: var(--emerald);
+  background: #ffffff;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
-  color: #073f37;
+  color: var(--blue);
   font-weight: 800;
   text-decoration: none;
   transition:
     transform 0.2s ease,
     opacity 0.2s ease;
+}
+
+.cta-button::before {
+  content: "";
+  width: 19px;
+  height: 15px;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  background: transparent;
+  transform: translateY(-1px);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
 }
 
 .cta-button:hover {
