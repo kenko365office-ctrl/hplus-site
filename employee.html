@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 従業員向け専用ページ：検索エンジンには表示しない -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>働くみなさんへ｜H＋ 外部保健室</title>
+  <meta
+    name="description"
+    content="H＋は、会社の外にある保健室です。体調、健診結果、こころ、仕事、人間関係、生活や家庭のことまで、気になることを相談できます。"
+  >
+
+  <style>
+    :root {
+      --bg: #fafaf8;
+      --surface: #ffffff;
+      --text: #2f3437;
+      --subtext: #626a6f;
+      --line: #e4e7e5;
+      --accent: #447f7b;
+      --accent-soft: #edf5f3;
+      --warm: #f7f3ed;
+      --danger-soft: #fff3f1;
+      --danger: #9a4e46;
+      --max-width: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Hiragino Sans",
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-bottom: 28px;
+      font-size: clamp(1.55rem, 5vw, 2.1rem);
+      line-height: 1.5;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+    }
+
+    .hero {
+      display: flex;
+      min-height: 92vh;
+      align-items: center;
+      padding: 72px 0;
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #fafaf8 100%
+        );
+    }
+
+    .hero-inner {
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      margin-bottom: 24px;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+
+    .hero h1 {
+      margin-bottom: 24px;
+    }
+
+    .lead {
+      margin-bottom: 42px;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .inner-voice {
+      margin: 36px 0;
+      padding-left: 22px;
+      border-left: 2px solid var(--accent);
+    }
+
+    .inner-voice p {
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+      font-weight: 600;
+    }
+
+    .future-message {
+      margin-top: 64px;
+    }
+
+    .future-message .headline {
+      margin-bottom: 26px;
+      font-size: clamp(1.35rem, 5vw, 1.85rem);
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .future-message .core {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .future-message .final-line {
+      margin-top: 22px;
+      color: var(--accent);
+      font-size: 1.18rem;
+      font-weight: 700;
+    }
+
+    .about {
+      background: var(--accent-soft);
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote {
+      margin: 28px 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .section-intro {
+      margin-bottom: 36px;
+      color: var(--subtext);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--subtext);
+      font-size: 0.94rem;
+      line-height: 1.75;
+    }
+
+    .privacy {
+      background: var(--warm);
+    }
+
+    .privacy-main {
+      margin-bottom: 26px;
+      font-size: 1.12rem;
+      font-weight: 700;
+    }
+
+    .privacy-note {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(47, 52, 55, 0.12);
+      color: var(--subtext);
+      font-size: 0.88rem;
+    }
+
+    .help-example {
+      margin: 30px 0;
+      padding: 26px;
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+    }
+
+    .help-example p {
+      margin-bottom: 8px;
+    }
+
+    .emergency {
+      padding: 64px 0;
+    }
+
+    .emergency-box {
+      padding: 28px;
+      border: 1px solid #ecd8d5;
+      border-radius: 16px;
+      background: var(--danger-soft);
+    }
+
+    .emergency-box h2 {
+      margin-bottom: 18px;
+      color: var(--danger);
+      font-size: 1.25rem;
+    }
+
+    .emergency-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cta {
+      padding: 80px 0 96px;
+      text-align: center;
+    }
+
+    .cta p {
+      max-width: 540px;
+      margin: 0 auto 28px;
+      color: var(--subtext);
+    }
+
+    .cta-button {
+      display: inline-flex;
+      min-height: 56px;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 34px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .cta-button:hover {
+      opacity: 0.86;
+    }
+
+    footer {
+      padding: 34px 20px;
+      border-top: 1px solid var(--line);
+      color: var(--subtext);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(calc(100% - 32px), var(--max-width));
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 88px 0 72px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .future-message {
+        margin-top: 52px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+
+    <!-- 01 Hero / H＋のブランドメッセージ -->
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-inner">
+
+          <p class="eyebrow">H＋｜外部保健室</p>
+
+          <h1>働くって、<br>本当に大変。</h1>
+
+          <p class="lead">
+            あなたは、もう十分頑張っています。
+          </p>
+
+          <p>
+            だからこそ、<br>
+            忙しさの中で、自分のことが後回しになっているかもしれません。
+          </p>
+
+          <div class="inner-voice">
+            <p>「あとで。」</p>
+            <p>「もう少し落ち着いたら。」</p>
+            <p>「まだ大丈夫なはず。」</p>
+          </div>
+
+          <p>
+            そんなふうに、<br>
+            自分のことを後回しにしていませんか。
+          </p>
+
+          <p>
+            心や体は、あなたにも小さなサインを送っています。
+          </p>
+
+          <div class="future-message">
+            <p class="headline">
+              仕事を頑張るためにも。<br>
+              あなた自身の未来のためにも。
+            </p>
+
+            <p class="core">
+              自分を大切にする時間を、<br>
+              後回しにしないでください。
+            </p>
+
+            <p class="final-line">
+              まだケアで変えられるうちに。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 02 About H＋ -->
+    <section class="about" id="about">
+      <div class="container">
+
+        <h2>H＋は、会社の外にある保健室です。</h2>
+
+        <p>体調のことだけではありません。</p>
+
+        <p>
+          健診結果のこと。<br>
+          仕事のこと。<br>
+          人間関係のこと。
+        </p>
+
+        <p class="quote">
+          「こんなこと相談していいのかな」
+        </p>
+
+        <p>そんなことでも大丈夫です。</p>
+
+        <p>
+          <strong>
+            あなたが自分を大切にするために、<br>
+            今できることを一緒に考えます。
+          </strong>
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- 03 Consultation topics -->
+    <section id="consultation">
+      <div class="container">
+
+        <h2>「こんなことでもいいのかな？」と思ったら</h2>
+
+        <p class="section-intro">
+          どこに相談したらいいか分からないことも、<br>
+          まだ相談するほどではないと思うことも大丈夫です。
+        </p>
+
+        <div class="cards">
+
+          <article class="card">
+            <h3>体調・受診</h3>
+            <p>
+              疲れ、痛み、体調不良、薬のこと、
+              病院へ行った方がよいか迷うときなど。
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>健診結果</h3>
+            <p>
+              数値の見方、再検査、受診先、
+              生活で気をつけることなど。
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>こころ・ストレス</h3>
+            <p>
+              気分の落ち込み、不安、眠れない、
+              仕事へ行くのがつらいときなど。
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>仕事・人間関係</h3>
+            <p>
+              職場での悩み、働き方、人との関わり、
+              言いづらい困りごとなど。
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>生活・家庭との両立</h3>
+            <p>
+              睡眠、食事、育児、介護、家族のこと、
+              妊娠、治療との両立など。
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>その他</h3>
+            <p>
+              相談先が分からないことや、
+              まず話を整理したいときにも利用できます。
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 04 Privacy -->
+    <section class="privacy" id="privacy">
+      <div class="container">
+
+        <h2>安心して相談してください</h2>
+
+        <p class="privacy-main">
+          あなたが相談した内容を、
+          あなたの同意なく会社へそのまま伝えることはありません。
+        </p>
+
+        <p>
+          H＋は、会社とは別の立場で皆さんの相談を受けています。
+        </p>
+
+        <p>
+          会社と一緒に考えた方がよいことがある場合も、
+          原則として
+          <strong>「何を・どこまで伝えるか」</strong>
+          をあなたと相談してから共有します。
+        </p>
+
+        <p>
+          また、皆さんから聞いた声を、
+          個人が分からない形で
+          「職場全体の傾向」として会社へ伝えることがあります。
+        </p>
+
+        <p class="privacy-note">
+          ※ご本人や周囲の方の生命・身体に差し迫った危険がある場合などは、
+          安全を守ることを優先し、
+          必要な範囲で関係者や専門機関と連携することがあります。
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- 05 What H＋ can do -->
+    <section id="support">
+      <div class="container">
+
+        <h2>H＋がお手伝いできること</h2>
+
+        <p>
+          H＋は、話を聞きながら状況を整理し、
+          必要に応じて受診や休養、職場への相談など、
+          <strong>今できることを一緒に考える場所</strong>です。
+        </p>
+
+        <div class="help-example">
+          <p>「病院に行った方がいいのかな」</p>
+          <p>「少し休んだ方がいいのかな」</p>
+          <p>「会社にどう伝えればいいんだろう」</p>
+        </div>
+
+        <p>
+          そんな迷いも、そのまま相談してください。
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- 06 Emergency -->
+    <section class="emergency" id="emergency">
+      <div class="container">
+
+        <div class="emergency-box">
+
+          <h2>緊急性が高いときは</h2>
+
+          <p>
+            H＋は救急医療機関ではありません。
+          </p>
+
+          <p>
+            意識がおかしい、強い胸痛や呼吸困難がある、
+            自分や誰かを傷つける危険が差し迫っているなど、
+            <strong>
+              生命や身体に危険がある場合は、
+              H＋からの返信を待たず119番へ連絡してください。
+            </strong>
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 07 CTA -->
+    <section class="cta" id="contact">
+      <div class="container">
+
+        <h2>気になったときが、相談するときです。</h2>
+
+        <p>
+          うまく説明できなくても大丈夫です。<br>
+          「ちょっと聞いてほしい」からでも始められます。
+        </p>
+
+        <!--
+          下の href="#" は、後で
+          H＋公式LINEの相談先URLなどへ変更します。
+        -->
+        <a class="cta-button" href="#">
+          H＋に相談する
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <p>H＋｜外部保健室</p>
+    <p>© H＋ All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
