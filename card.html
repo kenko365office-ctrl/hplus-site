@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>H＋｜外部保健室</title>
+
+  <meta
+    name="description"
+    content="H＋は、10〜30名規模の会社向けに、会社ごとに異なる人の課題を捉え、現場に合った仕組みを整える外部保健室です。"
+  >
+
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --text: #1f2a37;
+      --subtext: #617080;
+
+      --blue: #0d6efd;
+      --blue-deep: #0957cc;
+      --blue-soft: #eaf3ff;
+
+      --emerald: #19c7a3;
+      --emerald-soft: #e9fbf7;
+
+      --line: #dfe6ee;
+      --shadow: 0 16px 38px rgba(25, 55, 95, 0.10);
+      --max-width: 720px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Hiragino Sans",
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
+      line-height: 1.85;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      width: min(calc(100% - 36px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 76px 0 66px;
+      background:
+        radial-gradient(
+          circle at 88% 10%,
+          rgba(25, 199, 163, 0.20),
+          transparent 28%
+        ),
+        linear-gradient(
+          160deg,
+          #ffffff 0%,
+          #eef5ff 54%,
+          #f8fbff 100%
+        );
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -110px;
+      bottom: -120px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(13, 110, 253, 0.07);
+      content: "";
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand {
+      display: inline-block;
+      margin-bottom: 28px;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      margin: 0 0 28px;
+      font-size: clamp(2.1rem, 8vw, 3.5rem);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      margin: 0;
+      font-size: 1.08rem;
+      color: var(--subtext);
+    }
+
+    .lead strong {
+      color: var(--text);
+    }
+
+    /* CORE MESSAGE */
+
+    .message {
+      padding: 60px 0;
+      background: #ffffff;
+    }
+
+    .message-card {
+      padding: 32px 26px;
+      border-radius: 24px;
+      background: linear-gradient(
+        135deg,
+        var(--blue),
+        var(--blue-deep)
+      );
+      color: #ffffff;
+      box-shadow: 0 18px 42px rgba(13, 110, 253, 0.20);
+    }
+
+    .message-card p {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.9;
+    }
+
+    .message-card .accent {
+      display: inline-block;
+      margin-top: 18px;
+      padding-bottom: 3px;
+      border-bottom: 3px solid var(--emerald);
+    }
+
+    /* SUPPORT */
+
+    .support {
+      padding: 58px 0 68px;
+    }
+
+    .support h2 {
+      margin: 0 0 28px;
+      font-size: 1.55rem;
+      line-height: 1.5;
+    }
+
+    .support-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .support-item {
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      font-weight: 700;
+    }
+
+    .support-item:nth-child(odd) {
+      border-left: 5px solid var(--emerald);
+    }
+
+    .support-item:nth-child(even) {
+      border-left: 5px solid var(--blue);
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 72px 0 82px;
+      background: var(--blue-soft);
+      text-align: center;
+    }
+
+    .cta h2 {
+      margin: 0 0 18px;
+      font-size: 1.5rem;
+    }
+
+    .cta p {
+      margin: 0 auto 30px;
+      max-width: 520px;
+      color: var(--subtext);
+    }
+
+    .button {
+      display: flex;
+      min-height: 58px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 15px 26px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 14px 30px rgba(13, 110, 253, 0.20);
+    }
+
+    .button-secondary {
+      margin-top: 14px;
+      border: 2px solid var(--blue);
+      background: #ffffff;
+      color: var(--blue);
+      box-shadow: none;
+    }
+
+    footer {
+      padding: 34px 20px;
+      background: #ffffff;
+      color: var(--subtext);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        padding: 68px 0 58px;
+      }
+
+      .message {
+        padding: 50px 0;
+      }
+
+      .support {
+        padding: 52px 0 58px;
+      }
+
+      .cta {
+        padding: 62px 0 72px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+
+        <p class="brand">
+          H＋｜外部保健室
+        </p>
+
+        <h1>
+          人を大切にする会社に、<br>
+          人を支える仕組みを。
+        </h1>
+
+        <p class="lead">
+          <strong>10〜30名規模の会社向け。</strong><br>
+          健診・面談・相談窓口などを通じて、
+          人が働き続けやすい会社づくりを支えています。
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- CORE MESSAGE -->
+    <section class="message">
+      <div class="container">
+
+        <div class="message-card">
+
+          <p>
+            人に関する課題は、<br>
+            会社ごとに違います。
+          </p>
+
+          <p class="accent">
+            H＋は、会社ごとに異なる「人の課題」を捉え、
+            現場に合った仕組みを一緒に整えます。
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- WHAT WE SUPPORT -->
+    <section class="support">
+      <div class="container">
+
+        <h2>
+          H＋で支えていること
+        </h2>
+
+        <div class="support-list">
+
+          <div class="support-item">
+            健康診断の運用・受診サポート
+          </div>
+
+          <div class="support-item">
+            従業員との面談・継続的な接点
+          </div>
+
+          <div class="support-item">
+            会社の外にある相談窓口
+          </div>
+
+          <div class="support-item">
+            人に関する課題の整理と改善支援
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+
+        <h2>
+          H＋について、もう少し詳しく
+        </h2>
+
+        <p>
+          サービス内容や考え方については、
+          事業主向けホームページでご覧いただけます。
+        </p>
+
+        <!-- 後で事業主向けHPのURLへ接続 -->
+        <a
+          class="button"
+          href="index.html"
+        >
+          H＋を詳しく見る
+        </a>
+
+        <!-- 後で問い合わせ先URLへ接続 -->
+        <a
+          class="button button-secondary"
+          href="#"
+        >
+          お問い合わせ
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <p>H＋｜外部保健室</p>
+    <p>© H＋ All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
