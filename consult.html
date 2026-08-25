@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- LINE利用者向け専用ページ：検索結果には表示しない -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>こんなこと、相談していい？｜H＋ 外部保健室</title>
+  <meta
+    name="description"
+    content="H＋外部保健室の相談案内ページです。体調、健診結果、こころ、仕事、人間関係、家庭のことなど、相談してよいか迷うこともご相談ください。"
+  >
+
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --text: #1f2a37;
+      --subtext: #5f6b7a;
+      --line: #dfe6ee;
+
+      --blue: #0d6efd;
+      --blue-deep: #0957cc;
+      --blue-soft: #eaf3ff;
+
+      --emerald: #19c7a3;
+      --emerald-soft: #e9fbf7;
+
+      --warm: #fff8f1;
+      --shadow: 0 12px 32px rgba(25, 55, 95, 0.08);
+      --max-width: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Hiragino Sans",
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 9vw, 4rem);
+      line-height: 1.28;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      margin-bottom: 24px;
+      font-size: clamp(1.5rem, 5.5vw, 2.05rem);
+      line-height: 1.5;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      padding: 88px 0 78px;
+      background:
+        radial-gradient(circle at 88% 10%, rgba(25, 199, 163, 0.18), transparent 28%),
+        linear-gradient(160deg, #ffffff 0%, #eef5ff 52%, #f8fbff 100%);
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -90px;
+      bottom: -120px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(13, 110, 253, 0.07);
+      content: "";
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 26px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    .hero h1 {
+      margin-bottom: 28px;
+    }
+
+    .hero-lead {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+    }
+
+    .hero-lead strong {
+      color: var(--blue-deep);
+    }
+
+    /* 心の声 */
+
+    .voices {
+      padding-top: 58px;
+      background: #ffffff;
+    }
+
+    .voice-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .voice {
+      padding: 19px 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      font-weight: 700;
+    }
+
+    .voice:nth-child(odd) {
+      border-left: 5px solid var(--emerald);
+    }
+
+    .voice:nth-child(even) {
+      border-left: 5px solid var(--blue);
+    }
+
+    .answer {
+      margin-top: 36px;
+      padding: 27px 24px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-deep));
+      color: #ffffff;
+    }
+
+    .answer p {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    /* 相談例 */
+
+    .examples {
+      background: var(--bg);
+    }
+
+    .section-intro {
+      margin-bottom: 32px;
+      color: var(--subtext);
+    }
+
+    .example-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .example-card {
+      position: relative;
+      padding: 24px 22px 24px 54px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .example-card::before {
+      position: absolute;
+      top: 24px;
+      left: 22px;
+      width: 16px;
+      height: 16px;
+      border: 4px solid var(--emerald);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .example-card:nth-child(even)::before {
+      border-color: var(--blue);
+    }
+
+    .example-card p {
+      margin: 0;
+      font-weight: 650;
+    }
+
+    /* 守秘 */
+
+    .privacy {
+      background: linear-gradient(180deg, var(--blue-soft), #f6faff);
+    }
+
+    .privacy-box {
+      padding: 34px 28px;
+      border: 1px solid rgba(13, 110, 253, 0.12);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.93);
+      box-shadow: var(--shadow);
+    }
+
+    .privacy-main {
+      color: var(--blue-deep);
+      font-size: 1.16rem;
+      font-weight: 800;
+    }
+
+    .privacy-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .privacy-note {
+      margin-top: 26px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--subtext);
+      font-size: 0.88rem;
+    }
+
+    /* どう相談する？ */
+
+    .how {
+      background: #ffffff;
+    }
+
+    .message-box {
+      margin-top: 30px;
+      padding: 26px 24px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #f1f7ff, var(--emerald-soft));
+      box-shadow: var(--shadow);
+    }
+
+    .message-box p {
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .message-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 84px 0 96px;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(25, 199, 163, 0.2), transparent 28%),
+        linear-gradient(150deg, #0d6efd 0%, #075dcc 100%);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: #ffffff;
+    }
+
+    .cta p {
+      max-width: 560px;
+      margin: 0 auto 30px;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .cta-button {
+      display: inline-flex;
+      min-height: 58px;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 36px;
+      border: 2px solid rgba(255,255,255,0.9);
+      border-radius: 999px;
+      background: #ffffff;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.14);
+      color: var(--blue);
+      font-weight: 800;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    footer {
+      padding: 36px 20px;
+      background: #ffffff;
+      color: var(--subtext);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(calc(100% - 32px), var(--max-width));
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .hero {
+        padding: 76px 0 68px;
+      }
+
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .privacy-box {
+        padding: 29px 22px;
+      }
+
+      .cta {
+        padding: 72px 0 82px;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+
+    <!-- 01 HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+
+        <p class="eyebrow">H＋｜外部保健室</p>
+
+        <h1>
+          こんなこと、<br>
+          相談していい？
+        </h1>
+
+        <p class="hero-lead">
+          「これくらいで相談していいのかな」<br>
+          そう思うことほど、<strong>そのまま聞かせてください。</strong>
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- 02 迷い -->
+    <section class="voices">
+      <div class="container">
+
+        <h2>こんなふうに迷っていませんか？</h2>
+
+        <div class="voice-grid">
+          <div class="voice">「病院に行くほどではない気がする」</div>
+          <div class="voice">「最近ちょっとしんどい。でも理由が分からない」</div>
+          <div class="voice">「仕事のことだけど、誰に話せばいいの？」</div>
+          <div class="voice">「会社には知られたくない」</div>
+          <div class="voice">「うまく説明できる気がしない」</div>
+        </div>
+
+        <div class="answer">
+          <p>
+            どれも、H＋に相談して大丈夫です。
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 03 相談例 -->
+    <section class="examples">
+      <div class="container">
+
+        <h2>たとえば、こんなこと。</h2>
+
+        <p class="section-intro">
+          相談内容がはっきり決まっていなくても大丈夫です。
+        </p>
+
+        <div class="example-list">
+
+          <div class="example-card">
+            <p>健診で「再検査」と言われたけれど、何をすればいいか分からない。</p>
+          </div>
+
+          <div class="example-card">
+            <p>最近ずっと疲れている。病院へ行った方がいいのか迷っている。</p>
+          </div>
+
+          <div class="example-card">
+            <p>仕事へ行くのが少しつらい。でも、自分でもどうしたいのか分からない。</p>
+          </div>
+
+          <div class="example-card">
+            <p>職場の人とのことでモヤモヤしている。誰かに一度聞いてほしい。</p>
+          </div>
+
+          <div class="example-card">
+            <p>家のことと仕事の両立がしんどくなってきた。</p>
+          </div>
+
+          <div class="example-card">
+            <p>休んだ方がいい気もするけれど、会社にどう伝えればいいか分からない。</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 04 守秘 -->
+    <section class="privacy">
+      <div class="container">
+
+        <div class="privacy-box">
+
+          <h2>会社には、どう伝わるの？</h2>
+
+          <p class="privacy-main">
+            あなたが相談した内容を、
+            あなたの同意なく会社へそのまま伝えることはありません。
+          </p>
+
+          <p>
+            会社と一緒に考えた方がよいことがある場合も、
+            原則として
+            <strong>「何を・どこまで伝えるか」</strong>
+            をあなたと相談してから共有します。
+          </p>
+
+          <p>
+            また、相談の中で見えてきた共通の傾向を、
+            個人が分からない形で
+            「職場全体の傾向」として会社へ伝えることがあります。
+          </p>
+
+          <p class="privacy-note">
+            ※ご本人や周囲の方の生命・身体に差し迫った危険がある場合などは、
+            安全を守ることを優先し、必要な範囲で関係者や専門機関と連携することがあります。
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 05 相談方法 -->
+    <section class="how">
+      <div class="container">
+
+        <h2>何て送ればいい？</h2>
+
+        <p>
+          きれいに説明する必要はありません。
+          一言からでも大丈夫です。
+        </p>
+
+        <div class="message-box">
+          <p>「ちょっと聞いてほしいです」</p>
+          <p>「病院に行くか迷っています」</p>
+          <p>「最近しんどいです」</p>
+          <p>「どうしたらいいか分かりません」</p>
+        </div>
+
+        <p style="margin-top: 28px;">
+          そこから一緒に整理していきます。
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- 06 CTA -->
+    <section class="cta">
+      <div class="container">
+
+        <h2>
+          気になったときが、<br>
+          相談するときです。
+        </h2>
+
+        <p>
+          「相談するほどではないかも」と思う段階でも大丈夫です。
+        </p>
+
+        <a
+          class="cta-button"
+          href="https://lin.ee/vKHR4wq"
+        >
+          H＋に相談する
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>H＋｜外部保健室</p>
+    <p>© H＋ All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
