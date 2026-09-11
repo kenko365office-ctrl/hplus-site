@@ -4,253 +4,604 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>H＋｜外部保健室</title>
+  <title>外部保健室 H＋｜10〜30名規模の会社の「人」の課題を整える</title>
 
-  <meta
-    name="description"
-    content="H＋は、10〜30名規模の会社向けに、会社ごとに異なる人の課題を捉え、現場に合った仕組みを整える外部保健室です。"
-  >
+  <meta name="description"
+    content="H＋は10〜30名規模の会社向けの外部保健室。従業員の声や小さな変化を拾い、人に関する課題を整理し、会社が早めに動ける仕組みづくりを支援します。">
 
   <style>
     :root {
-      --bg: #f7f9fc;
-      --surface: #ffffff;
-      --text: #1f2a37;
-      --subtext: #617080;
+      --blue: #1677ff;
+      --blue-dark: #105fd1;
+      --emerald: #19bfa5;
 
-      --blue: #0d6efd;
-      --blue-deep: #0957cc;
-      --blue-soft: #eaf3ff;
+      --navy: #1d2939;
+      --text: #344054;
+      --muted: #667085;
 
-      --emerald: #19c7a3;
-      --emerald-soft: #e9fbf7;
+      --light-blue: #eef5ff;
+      --light-mint: #effbf8;
+      --white: #ffffff;
 
-      --line: #dfe6ee;
-      --shadow: 0 16px 38px rgba(25, 55, 95, 0.10);
-      --max-width: 720px;
+      --border: #e5eaf0;
+
+      --shadow:
+        0 12px 32px rgba(18, 55, 100, 0.08);
+
+      --radius-lg: 28px;
+      --radius-md: 20px;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--text);
       font-family:
         -apple-system,
         BlinkMacSystemFont,
         "Hiragino Sans",
         "Yu Gothic",
-        "Meiryo",
+        "Noto Sans JP",
         sans-serif;
-      line-height: 1.85;
-      letter-spacing: 0.02em;
+
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      overflow: hidden;
     }
 
     .container {
-      width: min(calc(100% - 36px), var(--max-width));
-      margin: 0 auto;
+      width: min(100% - 40px, 720px);
+      margin-inline: auto;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       position: relative;
-      overflow: hidden;
-      padding: 76px 0 66px;
+      padding: 54px 0 64px;
       background:
         radial-gradient(
-          circle at 88% 10%,
-          rgba(25, 199, 163, 0.20),
-          transparent 28%
+          circle at 95% 100%,
+          rgba(22, 119, 255, 0.12),
+          transparent 32%
         ),
-        linear-gradient(
-          160deg,
-          #ffffff 0%,
-          #eef5ff 54%,
-          #f8fbff 100%
-        );
-    }
-
-    .hero::after {
-      position: absolute;
-      right: -110px;
-      bottom: -120px;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background: rgba(13, 110, 253, 0.07);
-      content: "";
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
+        radial-gradient(
+          circle at 0% 0%,
+          rgba(25, 191, 165, 0.08),
+          transparent 30%
+        ),
+        #f8fbff;
     }
 
     .brand {
-      display: inline-block;
-      margin-bottom: 28px;
-      padding: 8px 15px;
-      border-radius: 999px;
-      background: var(--blue);
-      color: #ffffff;
-      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 34px;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      color: var(--blue-dark);
+      font-size: 15px;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue),
+          var(--blue-dark)
+        );
+      box-shadow:
+        0 8px 22px rgba(22, 119, 255, 0.25);
+      font-size: 18px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: #eaf2ff;
+      color: var(--blue-dark);
+      font-weight: 800;
+      font-size: 13px;
     }
 
     h1 {
-      margin: 0 0 28px;
-      font-size: clamp(2.1rem, 8vw, 3.5rem);
-      line-height: 1.3;
+      margin: 0 0 22px;
+      color: var(--navy);
+      font-size: clamp(34px, 8vw, 54px);
+      line-height: 1.25;
+      letter-spacing: -0.035em;
+    }
+
+    .hero-lead {
+      margin: 0;
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .hero-copy {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .hero-message {
+      margin-top: 34px;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue-dark),
+          var(--blue)
+        );
+
+      box-shadow:
+        0 14px 36px rgba(22, 119, 255, 0.18);
+    }
+
+    .hero-message strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       COMMON
+    ========================= */
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-soft {
+      background: #f8fafc;
+    }
+
+    .section-mint {
+      background: var(--light-mint);
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: clamp(28px, 7vw, 38px);
+      line-height: 1.4;
       letter-spacing: -0.02em;
     }
 
-    .lead {
-      margin: 0;
-      font-size: 1.08rem;
-      color: var(--subtext);
+    .section-lead {
+      margin: 0 0 34px;
+      color: var(--muted);
+      font-size: 16px;
     }
 
-    .lead strong {
-      color: var(--text);
-    }
+    /* =========================
+       ISSUES
+    ========================= */
 
-    /* CORE MESSAGE */
-
-    .message {
-      padding: 60px 0;
-      background: #ffffff;
-    }
-
-    .message-card {
-      padding: 32px 26px;
-      border-radius: 24px;
-      background: linear-gradient(
-        135deg,
-        var(--blue),
-        var(--blue-deep)
-      );
-      color: #ffffff;
-      box-shadow: 0 18px 42px rgba(13, 110, 253, 0.20);
-    }
-
-    .message-card p {
-      margin: 0;
-      font-size: 1.15rem;
-      font-weight: 700;
-      line-height: 1.9;
-    }
-
-    .message-card .accent {
-      display: inline-block;
-      margin-top: 18px;
-      padding-bottom: 3px;
-      border-bottom: 3px solid var(--emerald);
-    }
-
-    /* SUPPORT */
-
-    .support {
-      padding: 58px 0 68px;
-    }
-
-    .support h2 {
-      margin: 0 0 28px;
-      font-size: 1.55rem;
-      line-height: 1.5;
-    }
-
-    .support-list {
+    .issue-list {
       display: grid;
       gap: 14px;
     }
 
-    .support-item {
-      padding: 20px 22px;
-      border: 1px solid var(--line);
+    .issue {
+      padding: 22px 22px 22px 24px;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--blue);
       border-radius: 18px;
-      background: var(--surface);
+      background: white;
       box-shadow: var(--shadow);
+    }
+
+    .issue strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--navy);
+      font-size: 17px;
+    }
+
+    .issue p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       METHOD
+    ========================= */
+
+    .steps {
+      display: grid;
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      padding: 26px;
+      border-radius: var(--radius-md);
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 42px;
+      height: 42px;
+      margin-bottom: 16px;
+
+      border-radius: 50%;
+
+      background: var(--light-blue);
+      color: var(--blue-dark);
+
+      font-weight: 900;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 21px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .method-note {
+      margin-top: 28px;
+      padding: 22px;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(25, 191, 165, 0.12),
+          rgba(22, 119, 255, 0.08)
+        );
+
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    /* =========================
+       SERVICE EXAMPLES
+    ========================= */
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .tag {
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid #d7e5f7;
+      color: #35608e;
+      font-size: 13px;
       font-weight: 700;
     }
 
-    .support-item:nth-child(odd) {
-      border-left: 5px solid var(--emerald);
+    /* =========================
+       CASE
+    ========================= */
+
+    .case-card {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background: white;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
     }
 
-    .support-item:nth-child(even) {
-      border-left: 5px solid var(--blue);
+    .case-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--emerald);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
     }
 
-    /* CTA */
+    .case-card h3 {
+      margin: 0 0 20px;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1.45;
+    }
+
+    .case-flow {
+      display: grid;
+      gap: 16px;
+    }
+
+    .case-item {
+      padding-left: 18px;
+      border-left: 3px solid var(--emerald);
+    }
+
+    .case-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--navy);
+    }
+
+    .case-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .case-summary {
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 16px;
+      background: var(--light-mint);
+      color: #166f62;
+      font-weight: 800;
+    }
+
+    /* =========================
+       PROFILE
+    ========================= */
+
+    .profile {
+      display: grid;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .profile-image {
+      width: 160px;
+      aspect-ratio: 1;
+      border-radius: 22px;
+      object-fit: cover;
+      background: #eef2f6;
+    }
+
+    .profile-label {
+      margin-bottom: 7px;
+      color: var(--emerald);
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 0.13em;
+    }
+
+    .profile h3 {
+      margin: 0 0 6px;
+      color: var(--navy);
+      font-size: 28px;
+    }
+
+    .profile-qualification {
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .profile-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .profile-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .story {
+      margin-top: 26px;
+      padding: 24px;
+      border-radius: 20px;
+      background: #f7fafc;
+    }
+
+    .story strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .story p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       TRUST
+    ========================= */
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .trust {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #eef5ff;
+      color: #265d99;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
 
     .cta {
-      padding: 72px 0 82px;
-      background: var(--blue-soft);
       text-align: center;
+      padding: 78px 0;
+      background:
+        linear-gradient(
+          160deg,
+          #edf6ff 0%,
+          #effbf8 100%
+        );
+    }
+
+    .cta-kicker {
+      margin-bottom: 10px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
     }
 
     .cta h2 {
-      margin: 0 0 18px;
-      font-size: 1.5rem;
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: clamp(28px, 7vw, 40px);
+      line-height: 1.45;
     }
 
     .cta p {
+      max-width: 560px;
       margin: 0 auto 30px;
-      max-width: 520px;
-      color: var(--subtext);
+      color: var(--muted);
     }
 
-    .button {
+    .buttons {
+      display: grid;
+      gap: 12px;
+      max-width: 520px;
+      margin: auto;
+    }
+
+    .btn {
       display: flex;
-      min-height: 58px;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      padding: 15px 26px;
+      min-height: 62px;
+      padding: 14px 22px;
+
       border-radius: 999px;
-      background: var(--blue);
-      color: #ffffff;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 14px 30px rgba(13, 110, 253, 0.20);
+
+      font-weight: 900;
+      font-size: 17px;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
-    .button-secondary {
-      margin-top: 14px;
-      border: 2px solid var(--blue);
-      background: #ffffff;
-      color: var(--blue);
-      box-shadow: none;
+    .btn:hover {
+      transform: translateY(-2px);
     }
+
+    .btn-primary {
+      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue-dark),
+          var(--blue)
+        );
+
+      box-shadow:
+        0 12px 26px rgba(22, 119, 255, 0.25);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--blue-dark);
+      border: 2px solid var(--blue);
+    }
+
+    .small-link {
+      display: inline-block;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      padding: 34px 20px;
-      background: #ffffff;
-      color: var(--subtext);
-      font-size: 0.82rem;
+      padding: 36px 0 46px;
+      background: #122337;
+      color: #dce5ee;
       text-align: center;
+      font-size: 12px;
     }
 
-    @media (max-width: 620px) {
+    footer strong {
+      display: block;
+      margin-bottom: 8px;
+      color: white;
+      font-size: 15px;
+    }
+
+    /* =========================
+       DESKTOP
+    ========================= */
+
+    @media (min-width: 680px) {
       .hero {
-        padding: 68px 0 58px;
+        padding-top: 72px;
       }
 
-      .message {
-        padding: 50px 0;
+      .profile {
+        grid-template-columns: 180px 1fr;
       }
 
-      .support {
-        padding: 52px 0 58px;
-      }
-
-      .cta {
-        padding: 62px 0 72px;
+      .profile-image {
+        width: 180px;
       }
     }
   </style>
@@ -258,124 +609,388 @@
 
 <body>
 
-  <main>
+<div class="page">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
+  <!-- =========================
+       HERO
+  ========================== -->
+  <header class="hero">
+    <div class="container">
 
-        <p class="brand">
-          H＋｜外部保健室
-        </p>
+      <div class="brand">
+        <span class="brand-mark">H＋</span>
+        <span>外部保健室 H＋</span>
+      </div>
 
-        <h1>
-          人を大切にする会社に、<br>
-          人を支える仕組みを。
-        </h1>
+      <span class="eyebrow">
+        10〜30名規模の会社向け
+      </span>
 
-        <p class="lead">
-  <strong>10〜30名規模の会社向け。</strong><br>
-  従業員の声を拾い、会社ごとに異なる「人の課題」を整理し、
-  働き続けやすい会社づくりを支えています。
-</p>
+      <h1>
+        人を大切にする会社に、<br>
+        人を支える仕組みを。
+      </h1>
+
+      <p class="hero-lead">
+        社員が増えるほど、一人ひとりの変化は見えにくくなります。
+      </p>
+
+      <p class="hero-copy">
+        H＋は、従業員の声や小さな変化を拾い、
+        会社ごとに異なる「人の課題」を整理。
+        問題が大きくなる前に、会社が動ける仕組みづくりを支えます。
+      </p>
+
+      <div class="hero-message">
+        <strong>
+          人に関する課題は、会社ごとに違います。<br>
+          だから、最初から答えを決めません。
+        </strong>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       ISSUES
+  ========================== -->
+  <section>
+    <div class="container">
+
+      <h2 class="section-title">
+        こんなこと、ありませんか？
+      </h2>
+
+      <p class="section-lead">
+        会社が成長するほど、「人」の問題は経営者だけでは見えにくくなっていきます。
+      </p>
+
+      <div class="issue-list">
+
+        <div class="issue">
+          <strong>
+            社員が増え、一人ひとりの様子が見えにくくなった
+          </strong>
+          <p>
+            「最近どう？」と聞くだけでは拾えない変化もあります。
+          </p>
+        </div>
+
+        <div class="issue">
+          <strong>
+            メンタル不調・休職・退職が起きてから対応している
+          </strong>
+          <p>
+            問題が表面化してからでは、選択肢が少なくなることもあります。
+          </p>
+        </div>
+
+        <div class="issue">
+          <strong>
+            管理職が、社員対応を一人で抱えている
+          </strong>
+          <p>
+            健康・人間関係・働き方など、判断しづらい相談が増えていきます。
+          </p>
+        </div>
 
       </div>
-    </section>
+
+    </div>
+  </section>
 
 
-    <!-- CORE MESSAGE -->
-    <section class="message">
-      <div class="container">
+  <!-- =========================
+       METHOD
+  ========================== -->
+  <section class="section-soft">
+    <div class="container">
 
-       <div class="message-card">
+      <h2 class="section-title">
+        H＋がすること
+      </h2>
 
-  <p>
-    人に関する課題は、<br>
-    会社ごとに違います。
-  </p>
+      <p class="section-lead">
+        面談をすること自体が目的ではありません。
+        拾った声を、会社が動ける形に変えていきます。
+      </p>
 
-  <p class="accent">
-    H＋は、従業員との接点から見えてきたことをもとに、
-    「まず何から整えるか」を一緒に考えます。
-  </p>
+      <div class="steps">
 
-</div>
+        <article class="step">
+          <div class="step-number">1</div>
+
+          <h3>声を拾う</h3>
+
+          <p>
+            全員面談・相談窓口・健診などの接点から、
+            普段は会社に言いづらいことや、小さな変化を拾います。
+          </p>
+        </article>
+
+
+        <article class="step">
+          <div class="step-number">2</div>
+
+          <h3>人の課題を整理する</h3>
+
+          <p>
+            個人情報を守りながら、
+            会社として気づいておきたい傾向や
+            「人」に関するリスクを整理します。
+          </p>
+        </article>
+
+
+        <article class="step">
+          <div class="step-number">3</div>
+
+          <h3>会社が動ける仕組みにする</h3>
+
+          <p>
+            管理職支援、若手フォロー、休職・復職、
+            健診運用、職場環境改善など、
+            その会社に必要な一歩を一緒に整えます。
+          </p>
+        </article>
 
       </div>
-    </section>
+
+      <div class="method-note">
+        完璧な制度を一度につくるのではなく、
+        「まず何から整えるか」を一緒に考えるのがH＋です。
+      </div>
+
+      <div class="service-tags">
+        <span class="tag">全員面談</span>
+        <span class="tag">外部相談窓口</span>
+        <span class="tag">健診支援</span>
+        <span class="tag">管理職支援</span>
+        <span class="tag">若手フォロー</span>
+        <span class="tag">休職・復職支援</span>
+        <span class="tag">職場環境改善</span>
+      </div>
+
+    </div>
+  </section>
 
 
-    <!-- WHAT WE SUPPORT -->
-    <section class="support">
-      <div class="container">
+  <!-- =========================
+       CASE STUDY
+  ========================== -->
+  <section class="section-mint">
+    <div class="container">
 
-        <h2>
-          H＋で支えていること
-        </h2>
+      <span class="case-label">
+        CASE STUDY
+      </span>
 
-        <div class="support-list">
+      <h2 class="section-title">
+        声を拾うと、<br>
+        会社の「次の一歩」が見えてくる。
+      </h2>
 
-          <div class="support-item">
-            健康診断の運用・受診サポート
+      <div class="case-card">
+
+        <h3>
+          約20名の美容室での取り組み
+        </h3>
+
+        <div class="case-flow">
+
+          <div class="case-item">
+            <strong>01｜従業員の声を拾う</strong>
+            <p>
+              全員面談などを通して、働き方や職場環境について聞き取り。
+            </p>
           </div>
 
-          <div class="support-item">
-            従業員との面談・継続的な接点
+          <div class="case-item">
+            <strong>02｜傾向を整理</strong>
+            <p>
+              休憩環境、連勤後の疲労、
+              言い出しづらさなどの声が見えてきました。
+            </p>
           </div>
 
-          <div class="support-item">
-            会社の外にある相談窓口
-          </div>
-
-          <div class="support-item">
-            人に関する課題の整理と改善支援
+          <div class="case-item">
+            <strong>03｜会社が動く</strong>
+            <p>
+              休憩に関する声をきっかけに、
+              ネックサポート・テーブル付きの椅子を試験導入。
+              好評を受けて複数店舗へ展開しました。
+            </p>
           </div>
 
         </div>
 
+        <div class="case-summary">
+          大きな制度変更ではなくても、
+          「声を聞いて、会社が反応する」ことから
+          働きやすさは変わり始めます。
+        </div>
+
       </div>
-    </section>
+
+    </div>
+  </section>
 
 
-    <!-- CTA -->
-    <section class="cta">
-      <div class="container">
+  <!-- =========================
+       PROFILE
+  ========================== -->
+  <section>
+    <div class="container">
 
-        <h2>
-          H＋について、もう少し詳しく
-        </h2>
+      <h2 class="section-title">
+        H＋を運営している人
+      </h2>
+
+      <div class="profile">
+
+       
+        <img
+  class="profile-image"
+  src="profile.jpg"
+  alt="外部保健室H＋ 代表 谷口友里恵"
+>
+
+        <div>
+
+          <div class="profile-label">
+            REPRESENTATIVE
+          </div>
+
+          <h3>
+            谷口 友里恵
+          </h3>
+
+          <div class="profile-qualification">
+            保健師（国家資格）／看護師／第一種衛生管理者
+          </div>
+
+          <ul class="profile-list">
+            <li>
+              大学病院で看護師として勤務
+            </li>
+            <li>
+              健診・保健指導の現場を経験
+            </li>
+            <li>
+              2,000件以上の健診に関わる
+            </li>
+            <li>
+              神奈川県HATSU起業家支援プログラム採択
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="story">
+        <strong>
+          病気になってからではなく、その前に支えたい。
+        </strong>
 
         <p>
-          サービス内容や考え方については、
-          事業主向けホームページでご覧いただけます。
-        </p>
+          病院と健診の現場で働く中で、
+          忙しさから自分の健康を後回しにする働く人を
+          数多く見てきました。
 
-        <!-- 後で事業主向けHPのURLへ接続 -->
+          本人の努力だけに任せるのではなく、
+          働く環境の中に支える仕組みをつくりたい。
+          そこからH＋を始めました。
+        </p>
+      </div>
+
+      <div class="trust-row">
+        <span class="trust">
+          神奈川県HATSU採択
+        </span>
+
+        <span class="trust">
+          神奈川県央エリアで活動
+        </span>
+
+        <span class="trust">
+          オンライン対応可
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       CTA
+  ========================== -->
+  <section class="cta">
+    <div class="container">
+
+      <div class="cta-kicker">
+        LET'S TALK
+      </div>
+
+      <h2>
+        まずは、御社の<br>
+        「今」を整理するところから。
+      </h2>
+
+      <p>
+        「何から手をつければいいか分からない」
+        「うちに必要なのか知りたい」
+        という段階でも大丈夫です。
+
+        まずは今の状況をお聞きし、
+        必要な一歩を一緒に整理します。
+      </p>
+
+      <div class="buttons">
+
+       
         <a
-          class="button"
-          href="index.html"
+          class="btn btn-primary"
+          href="https://hplus-site.netlify.app/#contact"
+          target="_blank"
+          rel="noopener"
         >
-          H＋を詳しく見る
+          まず話を聞いてみる
         </a>
 
-        <!-- 後で問い合わせ先URLへ接続 -->
-        <a
-          class="button button-secondary"
-          href="https://forms.gle/noERRv1knPeXyKUU6"
-        >
-          お問い合わせ
+       
+       <a
+  class="btn btn-secondary"
+  href="https://hplus-site.netlify.app/"
+  target="_blank"
+  rel="noopener"
+>
+          H＋をもう少し詳しく見る
         </a>
 
       </div>
-    </section>
 
-  </main>
+      
+    </div>
+  </section>
 
 
+  <!-- =========================
+       FOOTER
+  ========================== -->
   <footer>
-    <p>H＋｜外部保健室</p>
-    <p>© H＋ All Rights Reserved.</p>
+    <div class="container">
+      <strong>
+        外部保健室 H＋
+      </strong>
+
+      人を大切にする会社に、人を支える仕組みを。<br>
+
+      © H＋ All Rights Reserved.
+    </div>
   </footer>
+
+</div>
 
 </body>
 </html>
