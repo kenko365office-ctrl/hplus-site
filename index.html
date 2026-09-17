@@ -81,17 +81,12 @@
       white-space: nowrap;
     }
 
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      border-radius: 8px;
-      color: var(--white);
-      background: var(--deep);
-      font-size: 1.05rem;
-      box-shadow: 0 10px 28px rgba(31,115,255,.18);
-    }
+    .brand-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 
     .nav {
       display: none;
@@ -156,8 +151,8 @@
     }
 
     .hero {
-      padding: 56px 0 40px;
-    }
+  padding: 40px 0 32px;
+}
 
     .hero-grid {
       display: grid;
@@ -199,20 +194,23 @@
     }
 
     .lead {
-      margin-top: 22px;
-      max-width: 42em;
-      color: #344441;
-      font-size: clamp(1rem, 3.8vw, 1.22rem);
-      font-weight: 600;
-    }
+  margin-top: 18px;
+  max-width: 42em;
+  color: #344441;
+  font-size: clamp(1rem, 3.8vw, 1.14rem);
+  line-height: 1.75;
+  font-weight: 600;
+}
 
     .hero-note {
-      margin-top: 22px;
-      padding-left: 16px;
-      border-left: 4px solid var(--accent);
-      color: var(--muted);
-      font-weight: 600;
-    }
+  margin-top: 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  font-weight: 600;
+}
 
     .hero-panel {
       border: 1px solid var(--line);
@@ -223,22 +221,22 @@
     }
 
     .hero-panel-top {
-      padding: 22px;
-      background: var(--deep);
-      color: var(--white);
-    }
+  padding: 18px 20px;
+  background: var(--deep);
+  color: var(--white);
+}
 
     .hero-panel-top strong {
-      display: block;
-      font-size: 1.28rem;
-      line-height: 1.45;
-    }
+  display: block;
+  font-size: 1.16rem;
+  line-height: 1.45;
+}
 
-    .hero-panel-body {
-      padding: 22px;
-      display: grid;
-      gap: 14px;
-    }
+   .hero-panel-body {
+  padding: 18px 20px;
+  display: grid;
+  gap: 12px;
+}
 
     .signal {
       display: grid;
@@ -596,15 +594,168 @@
         align-items: center;
       }
     }
+    .sp-break {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .sp-break {
+    display: inline;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+}
+    @media (max-width: 767px) {
+  .card p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .card h3 {
+    font-size: 1.15rem;
+    line-height: 1.4;
+  }
+}
+    @media (max-width: 767px) {
+  .intro-band h2 {
+    font-size: 1.8rem;
+    line-height: 1.35;
+  }
+
+  .intro-copy {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .intro-band .highlight {
+    font-size: 1rem;
+    line-height: 1.8;
+    padding-left: 18px;
+  }
+
+  .intro-band .highlight strong {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
+    @media (max-width: 767px) {
+  .option-grid {
+    gap: 14px;
+  }
+
+  .option {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .option strong {
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+
+  .option span {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .option-mark {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+}
+    @media (max-width: 767px) {
+  .case-flow {
+    gap: 14px;
+  }
+
+  .flow-step {
+    padding: 20px;
+  }
+
+  .flow-step small {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .flow-step h3 {
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .flow-step p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+    @media (max-width: 767px) {
+  .profile-photo {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+  }
+
+  #profile h2 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  #profile .lead {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .profile-list {
+    margin-top: 18px;
+  }
+
+  .profile-list li {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    padding: 14px 0;
+  }
+
+  #profile p[style*="margin-top:20px"] {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
+    @media (max-width: 767px) {
+  .button-row {
+    margin-top: 20px !important;
+    gap: 10px;
+  }
+
+  .button {
+    min-height: 44px;
+    padding: 10px 16px;
+    font-size: 0.98rem;
+  }
+}
+    .option .option-mark {
+  color: #ffffff !important;
+}
+    #contact .button {
+  color: #ffffff !important;
+}
+
+#contact .button:hover {
+  color: #ffffff !important;
+}
   </style>
 </head>
 <body>
   <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="#top" aria-label="H＋ トップへ">
-        <span class="brand-mark">H＋</span>
-        <span>H＋</span>
-      </a>
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="外部保健室 H＋ トップへ">
+      <img src="assets/hplus-logo-blue.png" alt="H＋" class="brand-logo">
+      <span>外部保健室 H＋</span>
+    </a>
       <nav class="nav" aria-label="主要ナビゲーション">
         <a href="#service">サービス</a>
         <a href="#option">オプション</a>
@@ -619,7 +770,10 @@
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">10〜30名規模の会社へ</p>
-          <h1>成長企業の「攻め」を支える、「守り」の外部保健室</h1>
+        <h1>
+  成長企業の「攻め」を支える、<span class="sp-break"><br></span>
+  「守り」の外部保健室
+</h1>
           <p class="lead">
   H＋は、従業員との接点から小さな変化や声を拾い、
   「人」の課題を整理し、会社が早めに動ける仕組みづくりを支える外部保健室です。
@@ -672,7 +826,7 @@
     <section class="section message-band">
       <div class="container message">
         <div>
-          <p class="eyebrow">Brand Message</p>
+          <p class="eyebrow">BRAND MESSAGE</p>
           <h2>人を大切にする会社に、人を支える仕組みを。</h2>
         </div>
         <p>「何かあったら対応する」だけではなく、普段から相談できる先をつくり、状態を整理し、必要なときに会社が迷わず動けるようにする。H＋は、やさしさを気持ちだけで終わらせず、続けられる仕組みに変えていきます。</p>
@@ -682,7 +836,7 @@
     <section class="section" id="service">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Basic Service</p>
+          <p class="eyebrow">BASIC SERVICE</p>
           <h2>基本サービス</h2>
           <p>年間契約の中で、社員一人ひとりとの接点と、会社としての判断材料の両方を整えます。</p>
         </div>
@@ -725,7 +879,7 @@
     <section class="section intro-band">
       <div class="container two-col">
         <div class="section-head" style="margin-bottom:0;">
-          <p class="eyebrow">For Managers</p>
+          <p class="eyebrow">FOR MANAGERS</p>
           <h2>社員対応を抱える管理職の相談・整理支援</h2>
         </div>
         <div>
@@ -741,7 +895,7 @@
     <section class="section" id="option">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Option</p>
+          <p class="eyebrow">OPTIONS</p>
           <h2>必要なタイミングで追加できる支援</h2>
           <p>基本サービスに加えて、個別の状況や会社のフェーズに合わせた支援を組み合わせられます。</p>
         </div>
@@ -769,7 +923,7 @@
     <section class="section case-band" id="case">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Case</p>
+          <p class="eyebrow">CASE</p>
           <h2>導入事例</h2>
           <p>約20名・複数拠点を運営するサービス業での支援例です。社名や店舗名は匿名化しています。</p>
         </div>
@@ -801,14 +955,14 @@
           <p class="profile-fallback" style="display:none;">profile.jpg をこのHTMLと同じ場所に置くと、プロフィール写真が表示されます。</p>
         </div>
         <div>
-          <p class="eyebrow">Profile</p>
+          <p class="eyebrow">PROFILE</p>
           <h2>谷口友里恵</h2>
           <p class="lead" style="margin-top:14px;">保健師（国家資格）／看護師／第一種衛生管理者</p>
           <ul class="profile-list">
             <li>大学病院にて看護師として勤務</li>
             <li>健診・保健指導の現場に従事</li>
             <li>健診機関で20,000件以上の健診報告書作成に関与</li>
-            <li>神奈川県HATSU採択</li>
+            <li>神奈川県HATSU起業家支援プログラム採択</li>
           </ul>
          <p style="margin-top:20px;color:var(--muted);font-weight:600;">
   医療職として個人の健康状態を見てきた経験と、
