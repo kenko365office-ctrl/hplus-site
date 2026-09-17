@@ -614,42 +614,47 @@
   <!-- =========================
        HERO
   ========================== -->
-  <header class="hero">
-    <div class="container">
+ <header class="hero">
+  <div class="container">
 
-      <div class="brand">
-        <span class="brand-mark">H＋</span>
-        <span>外部保健室 H＋</span>
-      </div>
-
-      <span class="eyebrow">
-        10〜30名規模の会社向け
-      </span>
-
-      <h1>
-        人を大切にする会社に、<br>
-        人を支える仕組みを。
-      </h1>
-
-      <p class="hero-lead">
-        社員が増えるほど、一人ひとりの変化は見えにくくなります。
-      </p>
-
-      <p class="hero-copy">
-        H＋は、従業員の声や小さな変化を拾い、
-        会社ごとに異なる「人の課題」を整理。
-        問題が大きくなる前に、会社が動ける仕組みづくりを支えます。
-      </p>
-
-      <div class="hero-message">
-        <strong>
-          人に関する課題は、会社ごとに違います。<br>
-          だから、最初から答えを決めません。
-        </strong>
-      </div>
-
+    <div class="brand">
+      <span class="brand-mark">H＋</span>
+      <span>外部保健室 H＋</span>
     </div>
-  </header>
+
+    <span class="eyebrow">
+      10〜30名規模の会社向け
+    </span>
+
+    <h1>
+      人を大切にする会社に、<br>
+      人を支える仕組みを。
+    </h1>
+
+    <p class="hero-lead">
+      社員が増えるほど、一人ひとりの変化は見えにくくなります。
+    </p>
+
+    <p class="hero-copy">
+      H＋は、健康・メンタル・働き方の小さな変化を拾い、<br>
+      会社の「人のリスク」として整理。<br>
+      問題が大きくなる前に、会社が動ける仕組みづくりを支えます。
+    </p>
+
+    <div class="hero-message">
+      <strong>
+        健康・メンタル・働き方。<br>
+        「人」のリスクは、会社ごとに違います。
+      </strong>
+
+      <p style="margin:14px 0 0;">
+        だからH＋は、最初から答えを決めず、<br>
+        今の会社に必要な一歩を一緒に整理します。
+      </p>
+    </div>
+
+  </div>
+</header>
 
 
   <!-- =========================
@@ -794,23 +799,22 @@
       <div class="case-card">
 
         <h3>
-          約20名の美容室での取り組み
+          約20名・複数拠点を運営するサービス業での取り組み
         </h3>
 
         <div class="case-flow">
 
           <div class="case-item">
-            <strong>01｜従業員の声を拾う</strong>
+            <strong>01｜健診を入口に話す</strong>
             <p>
-              全員面談などを通して、働き方や職場環境について聞き取り。
+              健診結果の確認をきっかけに一人ひとりと話す中で、体調だけでなく、働き方や休憩環境についての声も出てきました。
             </p>
           </div>
 
           <div class="case-item">
             <strong>02｜傾向を整理</strong>
             <p>
-              休憩環境、連勤後の疲労、
-              言い出しづらさなどの声が見えてきました。
+             休憩環境、連勤後の疲労、言い出しづらさなど、複数人に共通する傾向を整理。
             </p>
           </div>
 
@@ -822,13 +826,20 @@
               好評を受けて複数店舗へ展開しました。
             </p>
           </div>
-
+ <div class="case-item">
+    <strong>04｜会社の仕組みへ広げる</strong>
+    <p>
+      その後、休職・復職時の基本導線、
+      新入職者の定着フォロー、
+      管理職からH＋につなぐ相談ルートづくりへと
+      支援を広げています。
+    </p>
+  </div>
         </div>
 
         <div class="case-summary">
-          大きな制度変更ではなくても、
-          「声を聞いて、会社が反応する」ことから
-          働きやすさは変わり始めます。
+          声を拾って終わりではなく、
+小さな改善から、会社に残る仕組みへ。
         </div>
 
       </div>
@@ -878,7 +889,7 @@
               健診・保健指導の現場を経験
             </li>
             <li>
-              2,000件以上の健診に関わる
+              20,000件以上の健診に関わる
             </li>
             <li>
               神奈川県HATSU起業家支援プログラム採択
@@ -994,3 +1005,66 @@
 
 </body>
 </html>
+/* ===== H+ QRサイト：緑アクセントを青に統一 ===== */
+
+:root {
+  --brand-blue: #1f73ff;
+  --brand-blue-dark: #1557c8;
+  --brand-blue-soft: #eef5ff;
+  --brand-blue-soft-2: #f5f9ff;
+}
+
+/* 緑っぽい見出しラベル・セクションラベルを青に */
+.section-label,
+.case-label,
+.profile-label,
+.eyebrow,
+.kicker,
+.overline {
+  color: var(--brand-blue) !important;
+}
+
+/* 事例ブロック左の縦線を青に */
+.case-item {
+  border-left-color: var(--brand-blue) !important;
+}
+
+/* 番号丸を青系に */
+.step-number,
+.case-number,
+.flow-number {
+  background: var(--brand-blue-soft) !important;
+  color: var(--brand-blue) !important;
+}
+
+/* 薄緑のまとめボックスを薄青に */
+.case-summary,
+.message-box,
+.note-box,
+.highlight-box {
+  background: var(--brand-blue-soft) !important;
+  color: #1c2a44 !important;
+  border-color: rgba(31, 115, 255, 0.15) !important;
+}
+
+/* 代表者セクションの "REPRESENTATIVE" なども青に */
+.profile .section-label,
+.profile .profile-label,
+.profile .eyebrow {
+  color: var(--brand-blue) !important;
+}
+
+/* 緑系のタグ・チップ類を青系に */
+.tag,
+.chip,
+.badge {
+  border-color: rgba(31, 115, 255, 0.28) !important;
+  color: var(--brand-blue-dark) !important;
+  background: var(--brand-blue-soft-2) !important;
+}
+
+/* もしアイコン色が緑なら青へ */
+svg,
+.icon {
+  color: var(--brand-blue);
+}
