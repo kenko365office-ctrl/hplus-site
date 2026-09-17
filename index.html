@@ -494,17 +494,17 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .cta {
-      padding: 44px 0 54px;
-      background: var(--deep);
-      color: var(--white);
-    }
+   .cta {
+  padding: 32px 0;
+  background: var(--deep);
+  color: var(--white);
+}
 
-    .cta-box {
-      display: grid;
-      gap: 20px;
-      align-items: center;
-    }
+   .cta-box {
+  display: grid;
+  gap: 18px;
+  align-items: center;
+}
 
     .cta h2,
     .cta p {
@@ -517,11 +517,10 @@
     }
 
     .cta .button {
-      background: var(--accent);
-      color: #20170b;
-      box-shadow: none;
-    }
-
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: none;
+}
     .footer {
       padding: 28px 0;
       color: var(--muted);
@@ -747,6 +746,18 @@
 #contact .button:hover {
   color: #ffffff !important;
 }
+    @media (max-width: 767px) {
+  .intro-copy {
+    font-weight: 500;
+  }
+}
+    @media (max-width: 767px) {
+  .profile-photo {
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    object-fit: cover;
+  }
+}
   </style>
 </head>
 <body>
@@ -880,7 +891,10 @@
       <div class="container two-col">
         <div class="section-head" style="margin-bottom:0;">
           <p class="eyebrow">FOR MANAGERS</p>
-          <h2>社員対応を抱える管理職の相談・整理支援</h2>
+         <h2>
+  社員対応を抱える管理職の<span class="sp-break"><br></span>
+  相談・整理支援
+</h2>
         </div>
         <div>
           <p class="intro-copy">社員の不調や退職の兆しに最初に気づくのは、現場の管理職であることが少なくありません。一方で、声かけ、記録、会社への共有、本人への配慮をすべて一人で抱えると、管理職自身も疲弊します。</p>
@@ -912,6 +926,13 @@
             <span class="option-mark">＋</span>
             <div><strong>追加面談</strong><br><span>気になる社員や部署がある場合に、通常範囲を超えて個別面談を追加します。</span></div>
           </div>
+          <div class="option">
+  <span class="option-mark">＋</span>
+  <div>
+    <strong>ストレスチェック</strong><br>
+    <span>実施体制の整備から受検案内、実施後の整理まで支援します。</span>
+  </div>
+</div>
           <div class="option">
             <span class="option-mark">＋</span>
             <div><strong>特別サーベイ</strong><br><span>繁忙期、組織変更、新拠点立ち上げなどに合わせて、社員の状態を確認します。</span></div>
