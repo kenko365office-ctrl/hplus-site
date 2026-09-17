@@ -13,7 +13,7 @@
     :root {
       --blue: #1677ff;
       --blue-dark: #105fd1;
-      --emerald: #19bfa5;
+      --emerald:  #1f73ff;
 
       --navy: #1d2939;
       --text: #344054;
@@ -1005,66 +1005,3 @@
 
 </body>
 </html>
-/* ===== H+ QRサイト：緑アクセントを青に統一 ===== */
-
-:root {
-  --brand-blue: #1f73ff;
-  --brand-blue-dark: #1557c8;
-  --brand-blue-soft: #eef5ff;
-  --brand-blue-soft-2: #f5f9ff;
-}
-
-/* 緑っぽい見出しラベル・セクションラベルを青に */
-.section-label,
-.case-label,
-.profile-label,
-.eyebrow,
-.kicker,
-.overline {
-  color: var(--brand-blue) !important;
-}
-
-/* 事例ブロック左の縦線を青に */
-.case-item {
-  border-left-color: var(--brand-blue) !important;
-}
-
-/* 番号丸を青系に */
-.step-number,
-.case-number,
-.flow-number {
-  background: var(--brand-blue-soft) !important;
-  color: var(--brand-blue) !important;
-}
-
-/* 薄緑のまとめボックスを薄青に */
-.case-summary,
-.message-box,
-.note-box,
-.highlight-box {
-  background: var(--brand-blue-soft) !important;
-  color: #1c2a44 !important;
-  border-color: rgba(31, 115, 255, 0.15) !important;
-}
-
-/* 代表者セクションの "REPRESENTATIVE" なども青に */
-.profile .section-label,
-.profile .profile-label,
-.profile .eyebrow {
-  color: var(--brand-blue) !important;
-}
-
-/* 緑系のタグ・チップ類を青系に */
-.tag,
-.chip,
-.badge {
-  border-color: rgba(31, 115, 255, 0.28) !important;
-  color: var(--brand-blue-dark) !important;
-  background: var(--brand-blue-soft-2) !important;
-}
-
-/* もしアイコン色が緑なら青へ */
-svg,
-.icon {
-  color: var(--brand-blue);
-}
