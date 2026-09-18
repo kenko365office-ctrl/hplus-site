@@ -693,11 +693,7 @@
   }
 }
     @media (max-width: 767px) {
-  .profile-photo {
-    width: 100%;
-    max-height: 420px;
-    object-fit: cover;
-  }
+ 
 
   #profile h2 {
     font-size: 1.8rem;
@@ -751,13 +747,26 @@
     font-weight: 500;
   }
 }
-    @media (max-width: 767px) {
+   @media (max-width: 767px) {
   .profile-photo {
-    aspect-ratio: 16 / 10;
-    width: 100%;
-    object-fit: cover;
+    width: 52%;
+    max-width: 240px;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
   }
 }
+    @media (max-width: 767px) {
+  .section {
+    padding: 44px 0;
+  }
+
+  .section.tight {
+    padding: 36px 0;
+  }
+}おわた
   </style>
 </head>
 <body>
