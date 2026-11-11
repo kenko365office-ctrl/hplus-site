@@ -1,181 +1,797 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0D6EFD">
-  <meta name="description" content="外部保健室 H＋のストレスチェック導入支援料金。1〜48名の小規模事業場向けに、保健師が実施者業務から運用まで支援します。">
+  <meta name="description" content="外部保健室H＋のストレスチェック実施・運用サービス。主に50人未満の事業場向けに、保健師が実施者を担当します。">
   <title>ストレスチェック支援料金｜外部保健室 H＋</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --blue: #0D6EFD;
       --blue-deep: #084298;
-      --blue-light: #E7F1FF;
       --ink: #142b49;
       --muted: #53657a;
       --line: #DFE7F2;
       --soft: #F5F7FB;
+      --light-blue: #EDF5FF;
       --cream: #FFF8E9;
     }
+
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
-    body { margin: 0; color: var(--ink); font-family: "Noto Sans JP", system-ui, -apple-system, sans-serif; font-size: 15px; line-height: 1.85; background: white; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 15px;
+      line-height: 1.85;
+      background: #fff;
+    }
+
     a { color: var(--blue); }
-    .wrap { width: min(100% - 36px, 880px); margin: auto; }
-    .top { border-bottom: 1px solid var(--line); }
-    .top .wrap { min-height: 70px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-    .brand { font-weight: 800; letter-spacing: .02em; color: var(--blue-deep); text-decoration: none; white-space: nowrap; font-size: 16px; }
-    .brand strong { color: var(--blue); font-size: 23px; padding-left: 7px; }
-    .home { text-decoration: none; color: var(--muted); font-size: 12px; }
-    main { padding-bottom: 68px; }
-    .intro { padding: 53px 0 28px; }
-    .eyebrow { margin: 0 0 8px; color: var(--blue); font-size: 13px; font-weight: 700; letter-spacing: .05em; }
-    h1 { font-size: clamp(28px, 5.6vw, 42px); line-height: 1.45; letter-spacing: -.035em; margin: 0 0 13px; color: var(--ink); }
-    .lead { margin: 0; color: var(--muted); line-height: 1.8; }
-    .campaign { margin: 22px 0 35px; background: #EDF5FF; border-left: 5px solid var(--blue); border-radius: 10px; padding: 17px 23px; }
-    .campaign h2 { color: var(--blue-deep); font-size: 18px; margin: 0 0 4px; line-height: 1.5; }
-    .campaign p { margin: 0; font-size: 13px; color: #425875; }
-    .price-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin-top: 14px; }
-    .price-card { border: 1px solid var(--line); border-radius: 16px; padding: 26px 25px 21px; background: var(--cream); display: flex; flex-direction: column; }
-    .price-card.blue { background: #F0F7FF; }
-    .plan-title { display: inline-block; align-self: flex-start; border-radius: 999px; background: #D9EAFD; color: var(--blue-deep); padding: 4px 15px; font-size: 14px; font-weight: 700; }
-    .figure { margin: 15px 0 4px; white-space: nowrap; line-height: 1.3; font-size: clamp(36px, 6.2vw, 48px); font-weight: 800; color: #0A2D67; letter-spacing: -.05em; }
-    .figure span { font-size: 16px; font-weight: 700; letter-spacing: 0; }
-    .equation { font-size: 20px; color: #0A2D67; font-weight: 800; margin-top: -2px; letter-spacing: -.035em; }
-    .tax { font-size: 12px; color: var(--muted); margin: 3px 0 17px; }
-    .feature { margin-top: auto; padding-top: 13px; border-top: 1px solid #d3e0ee; font-weight: 700; color: #315477; font-size: 13px; }
-    .note { font-size: 12px; margin: 6px 0 0; color: var(--muted); }
-    .section { margin-top: 42px; }
-    .section h2 { font-size: 21px; margin: 0 0 13px; line-height: 1.5; color: var(--ink); }
-    .section h2::before { content: ""; display: inline-block; background: var(--blue); width: 4px; height: 21px; border-radius: 6px; margin-right: 12px; vertical-align: -3px; }
-    .included { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px 24px; border: 1px solid var(--line); border-radius: 14px; padding: 23px 25px; background: white; }
-    .included div { padding-left: 21px; position: relative; }
-    .included div::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--blue); font-weight: 800; }
-    .notes-box { background: var(--soft); border-radius: 14px; padding: 21px 25px; }
-    .notes-box ul { margin: 0; padding-left: 20px; }
-    .notes-box li + li { margin-top: 6px; }
-    .small { font-size: 12px; color: var(--muted); }
-    .contact { margin-top: 44px; padding: 30px 26px; background: #EAF3FF; border-radius: 16px; text-align: center; }
-    .contact h2 { margin: 0 0 9px; font-size: 22px; }
-    .contact p { margin: 0 0 20px; color: #425875; }
-    .btn { display: inline-flex; justify-content: center; align-items: center; border: 0; border-radius: 99px; background: var(--blue); color: white; font-size: 15px; font-weight: 700; padding: 13px 27px; text-decoration: none; box-shadow: 0 5px 14px rgba(13,110,253,.16); }
-    .btn:hover { background: #0B5ED7; }
-    .mail { font-size: 13px; margin-top: 15px; }
-    footer { border-top: 1px solid var(--line); padding: 24px 0; font-size: 12px; color: var(--muted); }
-    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-    footer a { color: var(--muted); }
-    @media (max-width: 600px) {
-      .intro { padding: 35px 0 18px; }
-      .campaign { margin: 20px 0 28px; padding: 16px 18px; }
-      .campaign h2 { font-size: 16px; }
-      /* 料金はチラシに合わせてスマートフォンでも左右2カラム */
-      .price-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-      .price-card { padding: 16px 10px 14px; border-radius: 12px; min-width: 0; }
-      .plan-title { font-size: 11px; padding: 4px 8px; }
-      .figure { font-size: clamp(25px, 7.5vw, 34px); margin-top: 14px; letter-spacing: -.055em; white-space: normal; overflow-wrap: anywhere; }
-      .figure span { font-size: 11px; white-space: nowrap; }
-      .equation { font-size: clamp(10px, 2.7vw, 14px); line-height: 1.55; margin-top: 6px; }
-      .tax { font-size: 10px; }
-      .feature { padding-top: 10px; font-size: 11px; }
-      .note { font-size: 10px; line-height: 1.65; }
-      .included { grid-template-columns: 1fr; padding: 19px; }
-      .section { margin-top: 36px; }
-      .contact { padding: 28px 20px; }
-      .contact h2 { font-size: 19px; }
-      .home { font-size: 11px; }
+
+    .wrap {
+      width: min(100% - 36px, 880px);
+      margin: auto;
     }
-    @media (max-width: 360px) {
-      .figure span { display: block; margin-top: 2px; }
-      .plan-title { font-size: 10px; }
+
+    /* ヘッダー */
+    .top {
+      border-bottom: 1px solid var(--line);
     }
-    @media print { .top { position: static; } .contact { break-inside: avoid; } .price-card { break-inside: avoid; } }
+
+    .top .wrap {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--blue-deep);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand strong {
+      color: var(--blue);
+      font-size: 23px;
+      padding-left: 7px;
+    }
+
+    .home {
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    main { padding-bottom: 65px; }
+
+    /* ページ冒頭 */
+    .intro {
+      padding: 48px 0 20px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+
+    h1 {
+      font-size: clamp(29px, 5vw, 42px);
+      line-height: 1.45;
+      margin: 0 0 14px;
+      letter-spacing: -.03em;
+    }
+
+    .lead {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* セクション共通 */
+    .section {
+      margin-top: 43px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      line-height: 1.5;
+      margin: 0 0 12px;
+    }
+
+    .section h2::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 21px;
+      margin-right: 12px;
+      border-radius: 5px;
+      background: var(--blue);
+      vertical-align: -3px;
+    }
+
+    .section-lead {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* 比較カード */
+    .comparison {
+      display: grid;
+      gap: 13px;
+    }
+
+    .compare-card {
+      display: grid;
+      grid-template-columns: 145px minmax(0,1fr) minmax(0,1fr);
+      gap: 13px;
+      align-items: stretch;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .compare-name {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .number {
+      background: #E5F0FF;
+      color: var(--blue-deep);
+      border-radius: 7px;
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .compare-box {
+      border-radius: 9px;
+      padding: 12px 14px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .compare-box.before {
+      background: var(--soft);
+    }
+
+    .compare-box.after {
+      background: var(--light-blue);
+      color: var(--blue-deep);
+      font-weight: 700;
+    }
+
+    .compare-label {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .after .compare-label {
+      color: var(--blue);
+    }
+
+    .small {
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    /* Q&A */
+    .faq-box {
+      background: var(--light-blue);
+      border-radius: 14px;
+      padding: 24px 27px;
+    }
+
+    .faq-question {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.6;
+      margin: 0 0 12px;
+      color: var(--blue-deep);
+    }
+
+    .faq-answer {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .faq-answer p {
+      margin: 0 0 12px;
+    }
+
+    .faq-answer p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 料金 */
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .price-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 25px;
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-card.blue {
+      background: #F0F7FF;
+    }
+
+    .plan-title {
+      display: inline-block;
+      align-self: flex-start;
+      border-radius: 99px;
+      padding: 4px 14px;
+      background: #D9EAFD;
+      color: var(--blue-deep);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .figure {
+      font-size: clamp(34px, 5vw, 46px);
+      line-height: 1.4;
+      font-weight: 800;
+      color: #0A2D67;
+      margin: 16px 0 2px;
+      letter-spacing: -.045em;
+    }
+
+    .figure span {
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    .equation {
+      font-size: 19px;
+      font-weight: 800;
+      color: #0A2D67;
+      line-height: 1.5;
+    }
+
+    .tax {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 5px 0 16px;
+    }
+
+    .feature {
+      margin-top: auto;
+      padding-top: 13px;
+      border-top: 1px solid #D3E0EE;
+      font-size: 13px;
+      font-weight: 700;
+      color: #315477;
+    }
+
+    .note {
+      margin: 7px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* 別途となるもの */
+    .notes-box {
+      background: var(--soft);
+      padding: 23px 26px;
+      border-radius: 14px;
+    }
+
+    .notes-box ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .notes-box li + li {
+      margin-top: 8px;
+    }
+
+    /* 問い合わせ */
+    .contact {
+      margin-top: 47px;
+      background: #EAF3FF;
+      border-radius: 16px;
+      padding: 31px 25px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 22px;
+      margin: 0 0 10px;
+    }
+
+    .contact p {
+      color: #425875;
+      margin: 0 0 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--blue);
+      color: #fff;
+      padding: 13px 27px;
+      border-radius: 99px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .btn:hover {
+      background: #0B5ED7;
+    }
+
+    .mail {
+      margin-top: 16px;
+      font-size: 13px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer a {
+      color: var(--muted);
+    }
+
+    /* スマートフォン */
+    @media (max-width: 680px) {
+      .intro {
+        padding-top: 34px;
+      }
+
+      .section {
+        margin-top: 35px;
+      }
+
+      .section h2 {
+        font-size: 20px;
+      }
+
+      .compare-card {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 15px;
+      }
+
+      .compare-name {
+        margin-bottom: 4px;
+      }
+
+      .compare-box {
+        padding: 11px 13px;
+      }
+
+      .compare-box.after {
+        border-left: 3px solid var(--blue);
+      }
+
+      .faq-box {
+        padding: 19px;
+      }
+
+      .faq-question {
+        font-size: 16px;
+      }
+
+      .price-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .price-card {
+        padding: 22px;
+      }
+
+      .figure {
+        font-size: 38px;
+      }
+
+      .notes-box {
+        padding: 20px;
+      }
+
+      .contact {
+        padding: 28px 18px;
+      }
+
+      .contact h2 {
+        font-size: 19px;
+      }
+
+      .home {
+        font-size: 11px;
+      }
+    }
+
+    @media print {
+      .compare-card,
+      .price-card,
+      .faq-box,
+      .contact {
+        break-inside: avoid;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <header class="top">
     <div class="wrap">
-      <a class="brand" href="/">外部保健室 <strong>H＋</strong></a>
-      <a class="home" href="/">H＋のホームページへ</a>
+      <a class="brand" href="/">
+        外部保健室 <strong>H＋</strong>
+      </a>
+      <a class="home" href="/">
+        H＋のホームページへ
+      </a>
     </div>
   </header>
+
   <main class="wrap">
-    <section class="intro" aria-labelledby="main-title">
-      <p class="eyebrow">1〜48名の事業場向け</p>
-      <h1 id="main-title">ストレスチェック<br>支援料金</h1>
-      <p class="lead">法定のストレスチェックを、H＋の保健師が実施者として支え、<br>導入準備から実施後の対応まで運用をサポートします。</p>
+
+    <!-- イントロ -->
+    <section class="intro">
+      <p class="eyebrow">主に50人未満の事業場向け</p>
+
+      <h1>ストレスチェック<br>支援料金</h1>
+
+      <p class="lead">
+        H＋の保健師が実施者を担当。<br>
+        導入準備から実施後の対応まで、
+        専門的な実施・運用を担います。
+      </p>
     </section>
 
-    <aside class="campaign" aria-label="先行導入に関するお知らせ">
-      <h2>先行導入企業向け特別プランを準備中！</h2>
-      <p>義務化に先立ち導入する企業向けに、特別価格を予定しています。</p>
-    </aside>
+    <!-- H＋に依頼すると変わること -->
+    <section class="section" aria-labelledby="compare-heading">
+      <h2 id="compare-heading">
+        H＋に依頼すると、ここまで変わります。
+      </h2>
 
-    <section aria-label="料金プラン">
+      <p class="section-lead">
+        実施者の確保から、受検管理、実施後の対応まで。
+        専門的な実務をH＋の保健師が担い、
+        会社の準備負担を減らします。
+      </p>
+
+      <div class="comparison">
+
+        <!-- 01 -->
+        <article class="compare-card">
+          <div class="compare-name">
+            <span class="number">01</span>
+            実施者
+          </div>
+
+          <div class="compare-box before">
+            <span class="compare-label">会社だけで進める場合</span>
+            実施者を探し、依頼する
+          </div>
+
+          <div class="compare-box after">
+            <span class="compare-label">H＋に依頼する場合</span>
+            H＋の保健師が実施者を担当
+          </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="compare-card">
+          <div class="compare-name">
+            <span class="number">02</span>
+            回答の仕組み
+          </div>
+
+          <div class="compare-box before">
+            <span class="compare-label">会社だけで進める場合</span>
+            受検システムを比較・選定する
+          </div>
+
+          <div class="compare-box after">
+            <span class="compare-label">H＋に依頼する場合</span>
+            受検システムを用意し、導入を支援
+          </div>
+        </article>
+
+        <!-- 03 -->
+        <article class="compare-card">
+          <div class="compare-name">
+            <span class="number">03</span>
+            従業員への案内
+          </div>
+
+          <div class="compare-box before">
+            <span class="compare-label">会社だけで進める場合</span>
+            案内資料や受検方法を準備する
+          </div>
+
+          <div class="compare-box after">
+            <span class="compare-label">H＋に依頼する場合</span>
+            案内資料をH＋が用意
+          </div>
+        </article>
+
+        <!-- 04 -->
+        <article class="compare-card">
+          <div class="compare-name">
+            <span class="number">04</span>
+            受検管理
+          </div>
+
+          <div class="compare-box before">
+            <span class="compare-label">会社だけで進める場合</span>
+            受検状況を確認・案内する
+          </div>
+
+          <div class="compare-box after">
+            <span class="compare-label">H＋に依頼する場合</span>
+            受検状況を確認し、会社と連携してフォロー
+          </div>
+        </article>
+
+        <!-- 05 -->
+        <article class="compare-card">
+          <div class="compare-name">
+            <span class="number">05</span>
+            実施後の対応
+          </div>
+
+          <div class="compare-box before">
+            <span class="compare-label">会社だけで進める場合</span>
+            高ストレス者への対応や医師面接の手配を進める
+          </div>
+
+          <div class="compare-box after">
+            <span class="compare-label">H＋に依頼する場合</span>
+            実施者として対応し、医師面接への接続を支援
+          </div>
+        </article>
+
+        <!-- 06 -->
+        <article class="compare-card">
+          <div class="compare-name">
+            <span class="number">06</span>
+            記録管理
+          </div>
+
+          <div class="compare-box before">
+            <span class="compare-label">会社だけで進める場合</span>
+            保存方法や引継ぎを整える
+          </div>
+
+          <div class="compare-box after">
+            <span class="compare-label">H＋に依頼する場合</span>
+            必要な記録管理を支援
+          </div>
+        </article>
+
+      </div>
+
+      <p class="small">
+        ※ 社内担当者の選任、対象者名簿の提出、
+        社内周知・配布、必要に応じた未受検者への声かけ、
+        医師面接指導の申出があった場合の会社側対応などは
+        お願いしています。
+      </p>
+    </section>
+
+    <!-- よくある質問：1問のみ -->
+    <section class="section" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">よくあるご質問</h2>
+
+      <div class="faq-box">
+        <p class="faq-question">
+          Q. 無料のストレスチェックツールだけで、
+          法律上の義務を果たせますか？
+        </p>
+
+        <div class="faq-answer">
+          <p>
+            <strong>
+              無料ツールを利用するだけでは、
+              法定のストレスチェックは完了しません。
+            </strong>
+          </p>
+
+          <p>
+            制度に沿った実施には、医師・保健師等の
+            「実施者」が必要です。
+            結果の評価や高ストレス者への対応、
+            必要な記録管理なども行います。
+          </p>
+
+          <p>
+            H＋では、保健師が実施者となり、
+            受検システムの準備から実施後の対応まで、
+            専門的な運用を担います。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 料金 -->
+    <section class="section" aria-labelledby="price-heading">
+      <h2 id="price-heading">料金プラン</h2>
+
       <div class="price-grid">
+
+        <!-- 1〜9名 -->
         <article class="price-card">
-          <div class="plan-title">対象者 1〜9名</div>
-          <div class="figure">40,000<span>円／年</span></div>
+          <span class="plan-title">
+            対象者 1〜9名
+          </span>
+
+          <div class="figure">
+            40,000<span>円／年</span>
+          </div>
+
           <p class="tax">税別</p>
-          <div class="feature">集団分析なし</div>
+
+          <div class="feature">
+            集団分析なし
+          </div>
         </article>
+
+        <!-- 10〜49名 -->
         <article class="price-card blue">
-          <div class="plan-title">対象者 10〜48名</div>
-          <div class="figure">50,000<span>円 ＋</span></div>
-          <div class="equation">1,000円 × 対象者数／年</div>
-          <p class="tax">税別</p>
-          <div class="feature">集団分析あり ※</div>
-          <p class="note">※ 回答人数等の条件を満たす場合に実施します。</p>
+          <span class="plan-title">
+            対象者 10〜49名
+          </span>
+
+          <div class="figure">
+            50,000<span>円 ＋</span>
+          </div>
+
+          <div class="equation">
+            1,000円 × 対象者数
+          </div>
+
+          <p class="tax">年間料金・税別</p>
+
+          <div class="feature">
+            集団分析結果の作成・提供あり ※
+          </div>
+
+          <p class="note">
+            ※ 回答人数等の条件を満たす場合に実施します。
+          </p>
         </article>
+
       </div>
-      <p class="small">※ 料金は1事業場・年1回の通常実施を想定した年額です。条件により個別のお見積りとなる場合があります。</p>
+
+      <p class="small">
+        ※ 料金は1事業場・年1回の通常実施を想定した年額です。
+        条件により個別のお見積りとなる場合があります。
+      </p>
+
+      <p class="small">
+        ※ 集団分析結果の提供は含まれますが、
+        結果を踏まえた職場改善の検討・実行支援は
+        基本料金に含まれません。
+      </p>
     </section>
 
-    <section class="section" aria-labelledby="included-heading">
-      <h2 id="included-heading">料金に含まれること</h2>
-      <div class="included">
-        <div>実施前の確認・設定</div>
-        <div>H＋の保健師による実施者業務</div>
-        <div>高ストレス者の確認・対応</div>
-        <div>医師面接指導への接続</div>
-        <div>実施終了後の記録</div>
-      </div>
-    </section>
+    <!-- 別途費用・個別見積り -->
+    <section class="section" aria-labelledby="extra-heading">
+      <h2 id="extra-heading">
+        別途費用・個別見積り
+      </h2>
 
-    <section class="section" aria-labelledby="excluded-heading">
-      <h2 id="excluded-heading">別途となるもの</h2>
       <div class="notes-box">
         <ul>
-          <li>地域産業保健センターを利用できない場合の医師面接指導費用</li>
-          <li>通常のストレスチェック実施を超える継続的な個別支援</li>
-          <li>49名以上の事業場は個別見積り</li>
+          <li>
+            地域産業保健センターを利用できない場合の
+            医師面接指導費用
+          </li>
+
+          <li>
+            集団分析結果を踏まえた
+            職場改善の検討・実行支援
+          </li>
+
+          <li>
+            通常のストレスチェック実施を超える
+            継続的な個別支援
+          </li>
+
+          <li>
+            50名以上の事業場は個別見積り
+          </li>
         </ul>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="company-heading">
-      <h2 id="company-heading">会社側にお願いすること</h2>
-      <div class="notes-box">
-        <ul>
-          <li>PCを使える担当者1名の選任</li>
-          <li>所定の名簿フォーマットへの入力・提出（従業員情報）</li>
-          <li>社内周知と、必要な配布物の社内配布</li>
-          <li>必要に応じた未受検者への声かけ</li>
-          <li>医師面接指導の申出があった場合の会社側対応</li>
-        </ul>
-      </div>
-    </section>
-
+    <!-- 問い合わせ -->
     <section class="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">自社の場合、いくらになる？</h2>
-      <p>人数や実施時期に合わせてご案内します。<br>導入前のご相談から承ります。</p>
-      <a class="btn" href="mailto:kenko.gift@outlook.jp?subject=%E3%82%B9%E3%83%88%E3%83%AC%E3%82%B9%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E5%B0%8E%E5%85%A5%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87">料金・導入について相談する</a>
-      <div class="mail">メール：<a href="mailto:kenko.gift@outlook.jp?subject=%E3%82%B9%E3%83%88%E3%83%AC%E3%82%B9%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E5%B0%8E%E5%85%A5%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87">kenko.gift@outlook.jp</a></div>
+      <h2 id="contact-heading">
+        自社の場合、いくらになる？
+      </h2>
+
+      <p>
+        人数や実施時期に合わせてご案内します。<br>
+        導入前のご相談から承ります。
+      </p>
+
+      <a
+        class="btn"
+        href="mailto:kenko.gift@outlook.jp?subject=ストレスチェック導入のご相談"
+      >
+        料金・導入について相談する
+      </a>
+
+      <div class="mail">
+        メール：
+        <a href="mailto:kenko.gift@outlook.jp">
+          kenko.gift@outlook.jp
+        </a>
+      </div>
     </section>
-    <p class="small" style="margin-top:20px;">制度に関する情報：<a href="https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei12/" target="_blank" rel="noopener noreferrer">厚生労働省「ストレスチェック制度」</a>。50人未満の事業場では2028年4月1日から実施が義務化されます。</p>
+
+    <!-- 公的な制度情報 -->
+    <p class="small" style="margin-top:24px;">
+      制度に関する情報：
+      <a
+        href="https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei12/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        厚生労働省「ストレスチェック制度」
+      </a>
+      。50人未満の事業場では2028年4月1日から
+      実施が義務化されます。
+    </p>
+
   </main>
-  <footer><div class="wrap"><span>© 外部保健室 H＋</span><a href="/">H＋ホームページ</a></div></footer>
+
+  <footer>
+    <div class="wrap">
+      <span>© 外部保健室 H＋</span>
+      <a href="/">H＋ホームページ</a>
+    </div>
+  </footer>
+
 </body>
 </html>
